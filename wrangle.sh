@@ -8,18 +8,23 @@
 #
 # Chris Joakim, Microsoft, 2018/03/14
 
+source bash_common
+
 identify_candidate_movies=1
 extract_movies=1
 extract_principals=1
 extract_people=1
 derive_people_edges=1
 
-footloose=tt0087277
-pretty_woman=tt0100405
-kevin_bacon=nm0000102
-julia_roberts=nm0000210
-richard_gere=nm0000152
-
+if [ $OSTYPE == "Darwin" ]
+then
+    source bin/activate    # activate the python virtualenv
+    python --version
+else
+    source activate graph  # activate the conda virtualenv named graph
+    python --version
+exit
+fi
 
 if [ $identify_candidate_movies -gt 0 ]
 then

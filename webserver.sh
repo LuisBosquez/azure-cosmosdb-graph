@@ -7,6 +7,18 @@
 #
 # Then visit http://localhost:8899/d3/index.html with your browser.
 #
-# Chris Joakim, Microsoft, 2018/03/12
+# Chris Joakim, Microsoft, 2018/03/14
 
-python -m http.server 8899
+source bash_common
+
+if [ $OSTYPE == "Darwin" ]
+then
+    source bin/activate    # activate the python virtualenv
+    python --version
+else
+    source activate graph  # activate the conda virtualenv named graph
+    python --version
+exit
+fi
+
+python -m http.server $D3_WEBSERVER_PORT

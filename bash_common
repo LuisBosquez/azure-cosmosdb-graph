@@ -11,6 +11,8 @@ export collname=movies
 OSTYPE=$(uname)
 export OSTYPE
 
+export D3_WEBSERVER_PORT=8899
+
 # IMDb identifiers
 export footloose=tt0087277
 export pretty_woman=tt0100405

@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Bash script used to detect and validate the environment variables.
+# Chris Joakim, Microsoft, 2018/03/14
+
 source bash_common
 
 echo 'OSTYPE:    '$OSTYPE

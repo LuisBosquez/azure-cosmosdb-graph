@@ -1,15 +1,21 @@
 #!/bin/bash
 
-# Chris Joakim, Microsoft, 2018/03/12
+# Chris Joakim, Microsoft, 2018/03/14
 # ./create_load_queries.sh
 
-dbname=dev
-collname=movies
+source bash_common
+
 outfile=data/processed/load_queries.txt
 
-kevin_bacon=nm0000102
-lori_singer=nm0001742
-footloose=tt0087277
+if [ $OSTYPE == "Darwin" ]
+then
+    source bin/activate    # activate the python virtualenv
+    python --version
+else
+    source activate graph  # activate the conda virtualenv named graph
+    python --version
+exit
+fi
 
 rm $outfile
 

@@ -7,6 +7,16 @@
 
 source bash_common
 
+if [ $OSTYPE == "Darwin" ]
+then
+    source bin/activate    # activate the python virtualenv
+    python --version
+else
+    source activate graph  # activate the conda virtualenv named graph
+    python --version
+exit
+fi
+
 mvn dependency:build-classpath -Dmdep.outputFile=classpath.txt
 
 echo 'executing classpath.py to generate classpath file'

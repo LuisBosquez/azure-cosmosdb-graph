@@ -1,14 +1,23 @@
 #!/bin/bash
 
-# Chris Joakim, Microsoft, 2018/03/12
+# Chris Joakim, Microsoft, 2018/03/14
 # ./cosmos_graph.sh > tmp/cosmos_graph.log
 
-export dbname=dev
-export collname=movies
+source bash_common
 
 drop_graph=0
 create_load_queries=1
 execute_load_queries=0
+
+if [ $OSTYPE == "Darwin" ]
+then
+    source bin/activate    # activate the python virtualenv
+    python --version
+else
+    source activate graph  # activate the conda virtualenv named graph
+    python --version
+exit
+fi
 
 if [ $drop_graph -gt 0 ]
 then

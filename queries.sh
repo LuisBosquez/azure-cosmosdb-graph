@@ -10,6 +10,16 @@
 
 source bash_common
 
+if [ $OSTYPE == "Darwin" ]
+then
+    source bin/activate    # activate the python virtualenv
+    python --version
+else
+    source activate graph  # activate the conda virtualenv named graph
+    python --version
+exit
+fi
+
 echo 'using database:   '$dbname
 echo 'using collection: '$collname
 
