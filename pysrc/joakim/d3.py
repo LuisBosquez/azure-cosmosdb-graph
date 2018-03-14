@@ -25,11 +25,8 @@ class D3Util:
         self.graph_obj['qname'] = self.results_obj['qname']
         self.graph_obj['query'] = self.results_obj['query']
 
-        if '_edges_' in self.infile:
-            self.parse_edges()
-
-        if '_knows_' in self.infile:
-            self.parse_knows()
+        if '_in_' in self.infile:
+            self.parse_in()
 
         if '_path_' in self.infile:
             self.parse_path()
@@ -40,11 +37,44 @@ class D3Util:
                 f.write(jstr)
                 print('file written: {}'.format(self.outfile))
 
-    def parse_edges(self):
-        pass
+    #
 
-    def parse_knows(self):
-        pass
+    def parse_in(self):
+        center_id = self.results_obj['id1']
+        vertices  = self.results_obj['result']
+
+        center_obj = dict()
+        center_obj['id'] = center_id
+        center_obj['name'] = center_id
+        center_obj['label'] = 'person'
+        self.nodes.append(center_obj)
+
+        # First create the Nodes (Vertices)
+        for v_idx, obj in enumerate(vertices):
+            self.add_in_node(obj)
+
+        # Next create the Links (Edges)
+        for v_idx, obj in enumerate(vertices):
+            self.add_in_link(center_obj, obj)
+
+        self.write_outfile = True
+
+    def add_in_node(self, obj, next_obj=None):
+        d = dict()
+        d['id'] = obj['id']
+        d['name'] = obj['properties']['title'][0]['value']
+        d['label'] = obj['id']
+        self.nodes.append(d)
+
+    def add_in_link(self, center_obj, obj):
+        d = dict()
+        d['source'] = center_obj['id']
+        d['target'] = obj['id']
+        d['type']   = 'in'
+        d['since']  = ''
+        self.links.append(d)
+
+    #
 
     def parse_path(self):
         paths = self.results_obj['result']
@@ -57,9 +87,9 @@ class D3Util:
                 next_obj_idx = obj_idx + 1
                 if next_obj_idx < obj_count:
                     next_obj = objects[next_obj_idx]
-                    self.add_node(obj, next_obj)
+                    self.add_path_node(obj, next_obj)
                 else:
-                    self.add_node(obj)
+                    self.add_path_node(obj)
 
         # Next create the Links (Edges)
         for path_idx, path in enumerate(paths):
@@ -69,11 +99,11 @@ class D3Util:
                 next_obj_idx = obj_idx + 1
                 if next_obj_idx < obj_count:
                     next_obj = objects[next_obj_idx]
-                    self.add_link(obj, next_obj, path_idx)
+                    self.add_path_link(obj, next_obj, path_idx)
 
         self.write_outfile = True
 
-    def add_node(self, obj, next_obj=None):
+    def add_path_node(self, obj, next_obj=None):
         id = obj['id']
         if id not in self.node_ids:
             d = dict()
@@ -83,7 +113,7 @@ class D3Util:
             self.node_ids[id] = d
             self.nodes.append(d)
 
-    def add_link(self, obj, next_obj, path_idx):
+    def add_path_link(self, obj, next_obj, path_idx):
         d = dict()
         d['source'] = obj['id']
         d['target'] = next_obj['id']

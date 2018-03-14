@@ -272,6 +272,7 @@ You can start a local python web server by running the command below:
 $ source bin/activate
 $ ./webserver.sh
 ```
+### Example 1
 
 In another Terminal window, execute the following command to query CosmosDB for the "knows"
 path from Lori Singer (actress in Footloose) to Charlotte Rampling (actress in Red Sparrow).
@@ -290,6 +291,15 @@ to see a D3.js visualization of your latest path query.  For example, the "knows
 Lori Singer to Charlotte Rampling is shown below.
 
 ![image 1](img/paths_lori_singer_to_charlotte_rampling.png "")
+
+### Example 2
+
+Can you guess who nm0000206 is based on what movies they are "in" ?
+```
+$ python cosmos_graph.py query $dbname $collname in nm0000206
+```
+![image 1](img/img/nm0000206-in.png "")
+
 
 ## Gremlin-Python and Apache TinkerPop
 
@@ -361,29 +371,3 @@ g.E(['USA', 'I5'])
 
 https://docs.microsoft.com/en-us/azure/cosmos-db/partition-data
 "It's a best practice to have a partition key with many distinct values (hundreds to thousands at a minimum)."
-
-OK -> g.addV('movie').property('pk', 'BP').property('id', 'tt0086927').property('title', 'Bachelor Party')
-
-OK -> g.addV('person').property('pk', 'Loren').property('id', 'nm0000047').property('name', 'Sophia Loren')
-
-OK -> g.V().hasId('tt0086927').has('pk','BP')
-
-OK -> g.V().hasId('nm0000047').has('pk','Loren')
-
-OK -> g.V().hasId('nm0000047')
-
-OK -> g.V().has('pk','BP')
-OK -> g.V().has('pk','Loren')
-
-OK -> g.V(['BP', 'tt0086927'])
-OK -> g.V(['Loren', 'nm0000047'])
-
-OK -> g.V(['Loren', 'nm0000047']).addE('in').to(g.V(['BP', 'tt0086927'])).property('title', 'a Movie')
-
-OK -> g.V(['n10','nm0000102'])
-
-OK -> g.V(['n10','nm0000102']).repeat(out().simplePath()).until(hasId('nm0000210')).path().limit(3)
-
-OK -> g.V().count()
-
-
