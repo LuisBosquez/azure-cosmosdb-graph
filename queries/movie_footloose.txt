@@ -3,21 +3,27 @@ create_client:
 endpoint: wss://cjoakim-cosmosdb-gremlin.gremlin.cosmosdb.azure.com:443/
 username: /dbs/dev/colls/movies
 qname: movie
-query: g.V().has('label','movie').has('id','tt0087277')
+query: g.V(['t295','tt0087277'])
 --- result_below ---
+<gremlin_python.driver.resultset.ResultSet object at 0x107591978>
 {
   "qname": "movie",
-  "query": "g.V().has('label','movie').has('id','tt0087277')",
-  "result_count": 1,
+  "query": "g.V(['t295','tt0087277'])",
   "result": [
     {
       "id": "tt0087277",
       "label": "movie",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "tt0087277|pk",
+            "value": "t295"
+          }
+        ],
         "title": [
           {
-            "id": "50386697-2885-43e8-a9d3-d43a48c646dc",
+            "id": "906d0e7f-cfb5-4d43-b547-5cc8c859b359",
             "value": "Footloose"
           }
         ]
@@ -26,5 +32,5 @@ query: g.V().has('label','movie').has('id','tt0087277')
   ]
 }
 --- result_above ---
-file written: tmp/query_movie_1520854104.json
-D3Util#__init__: tmp/query_movie_1520854104.json
+file written: tmp/query_movie_1521022627.json
+D3Util#__init__: tmp/query_movie_1521022627.json

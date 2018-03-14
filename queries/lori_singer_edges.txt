@@ -3,15 +3,15 @@ create_client:
 endpoint: wss://cjoakim-cosmosdb-gremlin.gremlin.cosmosdb.azure.com:443/
 username: /dbs/dev/colls/movies
 qname: edges
-query: g.V('nm0001742').bothE()
+query: g.V(['n41','nm0001742']).bothE()
 --- result_below ---
+<gremlin_python.driver.resultset.ResultSet object at 0x10560a978>
 {
   "qname": "edges",
-  "query": "g.V('nm0001742').bothE()",
-  "result_count": 14,
+  "query": "g.V(['n41','nm0001742']).bothE()",
   "result": [
     {
-      "id": "a01d9ef6-b8e1-4ca3-8558-2714a86dc91c",
+      "id": "b3ee63a1-7d1b-4c4c-a7e2-924eb49ab919",
       "label": "in",
       "type": "edge",
       "inVLabel": "movie",
@@ -23,7 +23,7 @@ query: g.V('nm0001742').bothE()
       }
     },
     {
-      "id": "e5ba26aa-d007-436d-becd-c9d23bdc33a5",
+      "id": "52e5d29d-2baa-44fc-8fec-3ae2fc46f980",
       "label": "in",
       "type": "edge",
       "inVLabel": "movie",
@@ -35,7 +35,7 @@ query: g.V('nm0001742').bothE()
       }
     },
     {
-      "id": "6478082c-8c80-4830-90d5-f98e2699a91a",
+      "id": "87f2f9b1-5af7-4a9e-9763-fde9e0f7d5f5",
       "label": "knows",
       "type": "edge",
       "inVLabel": "person",
@@ -47,7 +47,7 @@ query: g.V('nm0001742').bothE()
       }
     },
     {
-      "id": "6ae084a0-8589-4a27-a8f2-aca570d52c6a",
+      "id": "dacb1cdb-edb9-4efd-9daf-59379bdae276",
       "label": "knows",
       "type": "edge",
       "inVLabel": "person",
@@ -59,7 +59,7 @@ query: g.V('nm0001742').bothE()
       }
     },
     {
-      "id": "1c9930b6-6b5a-4184-9661-c40cdf40c214",
+      "id": "f68b2afd-7270-472f-801c-e919614b63c6",
       "label": "knows",
       "type": "edge",
       "inVLabel": "person",
@@ -71,7 +71,7 @@ query: g.V('nm0001742').bothE()
       }
     },
     {
-      "id": "b22d50bf-2277-4035-be25-04ccf7b6b4d1",
+      "id": "af95f89b-2107-4515-8db5-cfcf72e1f78d",
       "label": "knows",
       "type": "edge",
       "inVLabel": "person",
@@ -83,7 +83,7 @@ query: g.V('nm0001742').bothE()
       }
     },
     {
-      "id": "45316f0d-e11e-48dd-aa7b-9f029d134d1d",
+      "id": "e8c9e843-13b7-4578-a85e-7ad0d6cad834",
       "label": "knows",
       "type": "edge",
       "inVLabel": "person",
@@ -95,7 +95,7 @@ query: g.V('nm0001742').bothE()
       }
     },
     {
-      "id": "fe37eb59-e816-4cfc-b9d9-244ccb59b8ee",
+      "id": "b7e33c18-1806-48a4-8a98-9e6c9a9dadab",
       "label": "knows",
       "type": "edge",
       "inVLabel": "person",
@@ -107,19 +107,19 @@ query: g.V('nm0001742').bothE()
       }
     },
     {
-      "id": "ff816bea-4f17-4d13-9285-66516d266d86",
+      "id": "91dc19e1-615c-42f1-85a1-b5d48d529d1e",
       "label": "knows",
       "type": "edge",
       "inVLabel": "person",
       "outVLabel": "person",
       "inV": "nm0001742",
-      "outV": "nm0000102",
+      "outV": "nm0001848",
       "properties": {
         "mid_list": "tt0087277"
       }
     },
     {
-      "id": "00c60051-3e9e-417c-92dc-51322df47618",
+      "id": "e75c9b55-d690-4a18-80cd-927a7087674f",
       "label": "knows",
       "type": "edge",
       "inVLabel": "person",
@@ -131,7 +131,7 @@ query: g.V('nm0001742').bothE()
       }
     },
     {
-      "id": "9020cacf-82e5-4127-b82f-03081916c694",
+      "id": "2e56be3c-ee02-4d42-abe2-c847e8d83bc2",
       "label": "knows",
       "type": "edge",
       "inVLabel": "person",
@@ -143,19 +143,7 @@ query: g.V('nm0001742').bothE()
       }
     },
     {
-      "id": "114431bd-dbc7-43dd-95f4-4b36d256f7cd",
-      "label": "knows",
-      "type": "edge",
-      "inVLabel": "person",
-      "outVLabel": "person",
-      "inV": "nm0001742",
-      "outV": "nm0001164",
-      "properties": {
-        "mid_list": "tt0089543"
-      }
-    },
-    {
-      "id": "6f71005b-fc55-45d8-a834-0ecf1189813a",
+      "id": "8e92b02e-2a05-4921-b24b-b88d81ed5056",
       "label": "knows",
       "type": "edge",
       "inVLabel": "person",
@@ -167,19 +155,31 @@ query: g.V('nm0001742').bothE()
       }
     },
     {
-      "id": "d0b01bc3-fba4-4f7d-bc35-0dfcc763c7e5",
+      "id": "fc36c38d-c420-4a13-8561-3124a71cbe69",
       "label": "knows",
       "type": "edge",
       "inVLabel": "person",
       "outVLabel": "person",
       "inV": "nm0001742",
-      "outV": "nm0001848",
+      "outV": "nm0000102",
       "properties": {
         "mid_list": "tt0087277"
+      }
+    },
+    {
+      "id": "018bd26b-6351-45ac-8264-5e1de6ba6268",
+      "label": "knows",
+      "type": "edge",
+      "inVLabel": "person",
+      "outVLabel": "person",
+      "inV": "nm0001742",
+      "outV": "nm0001164",
+      "properties": {
+        "mid_list": "tt0089543"
       }
     }
   ]
 }
 --- result_above ---
-file written: tmp/query_edges_1520854203.json
-D3Util#__init__: tmp/query_edges_1520854203.json
+file written: tmp/query_edges_1521022681.json
+D3Util#__init__: tmp/query_edges_1521022681.json

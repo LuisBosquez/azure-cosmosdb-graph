@@ -3,12 +3,12 @@ create_client:
 endpoint: wss://cjoakim-cosmosdb-gremlin.gremlin.cosmosdb.azure.com:443/
 username: /dbs/dev/colls/movies
 qname: path
-query: g.V('nm0000152').repeat(out().simplePath()).until(hasId('nm0000210')).path().limit(3)
+query: g.V(['n12','nm0000152']).repeat(out().simplePath()).until(hasId('nm0000210')).path().limit(3)
 --- result_below ---
+<gremlin_python.driver.resultset.ResultSet object at 0x10ceff9b0>
 {
   "qname": "path",
-  "query": "g.V('nm0000152').repeat(out().simplePath()).until(hasId('nm0000210')).path().limit(3)",
-  "result_count": 3,
+  "query": "g.V(['n12','nm0000152']).repeat(out().simplePath()).until(hasId('nm0000210')).path().limit(3)",
   "result": [
     {
       "labels": [
@@ -21,9 +21,15 @@ query: g.V('nm0000152').repeat(out().simplePath()).until(hasId('nm0000210')).pat
           "label": "person",
           "type": "vertex",
           "properties": {
+            "pk": [
+              {
+                "id": "nm0000152|pk",
+                "value": "n12"
+              }
+            ],
             "name": [
               {
-                "id": "4fd27782-4206-4eda-a04b-4fadbd35a71e",
+                "id": "069b03ee-c460-4c42-be40-0a39470c6106",
                 "value": "Richard Gere"
               }
             ]
@@ -34,9 +40,15 @@ query: g.V('nm0000152').repeat(out().simplePath()).until(hasId('nm0000210')).pat
           "label": "person",
           "type": "vertex",
           "properties": {
+            "pk": [
+              {
+                "id": "nm0000210|pk",
+                "value": "n14"
+              }
+            ],
             "name": [
               {
-                "id": "81601c6f-7eae-4c84-bed2-e36b593f9b89",
+                "id": "a3681a09-4e36-4435-bc99-8e4d7dfd855e",
                 "value": "Julia Roberts"
               }
             ]
@@ -56,9 +68,15 @@ query: g.V('nm0000152').repeat(out().simplePath()).until(hasId('nm0000210')).pat
           "label": "person",
           "type": "vertex",
           "properties": {
+            "pk": [
+              {
+                "id": "nm0000152|pk",
+                "value": "n12"
+              }
+            ],
             "name": [
               {
-                "id": "4fd27782-4206-4eda-a04b-4fadbd35a71e",
+                "id": "069b03ee-c460-4c42-be40-0a39470c6106",
                 "value": "Richard Gere"
               }
             ]
@@ -69,9 +87,15 @@ query: g.V('nm0000152').repeat(out().simplePath()).until(hasId('nm0000210')).pat
           "label": "person",
           "type": "vertex",
           "properties": {
+            "pk": [
+              {
+                "id": "nm0000114|pk",
+                "value": "n10"
+              }
+            ],
             "name": [
               {
-                "id": "667ecb35-e102-4ffd-84c2-05d0dc4c4b85",
+                "id": "7b2de26d-1cde-466a-8f6b-52e691f35ee0",
                 "value": "Steve Buscemi"
               }
             ]
@@ -82,9 +106,15 @@ query: g.V('nm0000152').repeat(out().simplePath()).until(hasId('nm0000210')).pat
           "label": "person",
           "type": "vertex",
           "properties": {
+            "pk": [
+              {
+                "id": "nm0000210|pk",
+                "value": "n14"
+              }
+            ],
             "name": [
               {
-                "id": "81601c6f-7eae-4c84-bed2-e36b593f9b89",
+                "id": "a3681a09-4e36-4435-bc99-8e4d7dfd855e",
                 "value": "Julia Roberts"
               }
             ]
@@ -104,9 +134,15 @@ query: g.V('nm0000152').repeat(out().simplePath()).until(hasId('nm0000210')).pat
           "label": "person",
           "type": "vertex",
           "properties": {
+            "pk": [
+              {
+                "id": "nm0000152|pk",
+                "value": "n12"
+              }
+            ],
             "name": [
               {
-                "id": "4fd27782-4206-4eda-a04b-4fadbd35a71e",
+                "id": "069b03ee-c460-4c42-be40-0a39470c6106",
                 "value": "Richard Gere"
               }
             ]
@@ -117,9 +153,15 @@ query: g.V('nm0000152').repeat(out().simplePath()).until(hasId('nm0000210')).pat
           "label": "person",
           "type": "vertex",
           "properties": {
+            "pk": [
+              {
+                "id": "nm0000215|pk",
+                "value": "n14"
+              }
+            ],
             "name": [
               {
-                "id": "94445504-0aaa-4324-8098-1ce3c16bb10f",
+                "id": "744532bc-5e05-4ec9-8b9c-c3b74885cc21",
                 "value": "Susan Sarandon"
               }
             ]
@@ -130,9 +172,15 @@ query: g.V('nm0000152').repeat(out().simplePath()).until(hasId('nm0000210')).pat
           "label": "person",
           "type": "vertex",
           "properties": {
+            "pk": [
+              {
+                "id": "nm0000210|pk",
+                "value": "n14"
+              }
+            ],
             "name": [
               {
-                "id": "81601c6f-7eae-4c84-bed2-e36b593f9b89",
+                "id": "a3681a09-4e36-4435-bc99-8e4d7dfd855e",
                 "value": "Julia Roberts"
               }
             ]
@@ -143,6 +191,6 @@ query: g.V('nm0000152').repeat(out().simplePath()).until(hasId('nm0000210')).pat
   ]
 }
 --- result_above ---
-file written: tmp/query_path_1520854241.json
-D3Util#__init__: tmp/query_path_1520854241.json
+file written: tmp/query_path_1521022702.json
+D3Util#__init__: tmp/query_path_1521022702.json
 file written: d3/graph.json

@@ -3,21 +3,27 @@ create_client:
 endpoint: wss://cjoakim-cosmosdb-gremlin.gremlin.cosmosdb.azure.com:443/
 username: /dbs/dev/colls/movies
 qname: person
-query: g.V().has('label','person').has('id','nm0000102')
+query: g.V(['n10','nm0000102'])
 --- result_below ---
+<gremlin_python.driver.resultset.ResultSet object at 0x101e48908>
 {
   "qname": "person",
-  "query": "g.V().has('label','person').has('id','nm0000102')",
-  "result_count": 1,
+  "query": "g.V(['n10','nm0000102'])",
   "result": [
     {
       "id": "nm0000102",
       "label": "person",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "nm0000102|pk",
+            "value": "n10"
+          }
+        ],
         "name": [
           {
-            "id": "ba749aff-7a72-429e-8bf7-ff40c73e2e18",
+            "id": "c48051a9-c722-48f0-abbe-1f3ccf122b14",
             "value": "Kevin Bacon"
           }
         ]
@@ -26,5 +32,5 @@ query: g.V().has('label','person').has('id','nm0000102')
   ]
 }
 --- result_above ---
-file written: tmp/query_person_1520854123.json
-D3Util#__init__: tmp/query_person_1520854123.json
+file written: tmp/query_person_1521022638.json
+D3Util#__init__: tmp/query_person_1521022638.json

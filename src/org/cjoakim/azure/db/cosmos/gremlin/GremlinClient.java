@@ -105,9 +105,8 @@ public class GremlinClient {
 
     private static void query() throws Exception {
 
-        String[] queries = new String[2];
+        String[] queries = new String[1];
         queries[0] = "g.V(['n10','nm0000102'])";
-        queries[1] = "g.V(['n41','nm0001742']).repeat(out().simplePath()).until(hasId('nm0001648')).path().limit(3)";
 
         for (String query : queries) {
             System.out.println("query: " + query);

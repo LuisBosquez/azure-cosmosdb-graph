@@ -59,6 +59,7 @@ class Main:
         self.favorites = values.Favorites()
         self.queries = list()
         self.default_sleep_time = 0.25
+        self.query_sleep_time = 1.0
         self.submit_query = False
         self.load_queries = list()
         self.load_idx = 0
@@ -193,19 +194,12 @@ class Main:
 
     def drop_graph(self, db, coll):
         print('drop_graph - db {} coll: {}'.format(db, coll))
-        query = 'g.V().drop()'
         self.create_client(db, coll)
-        self.execute_query(query, 10)
 
-    def execute_query(self, query, t=None):
-        if query:
-            callback = self.gremlin_client.submitAsync(query)
-            if callback.result() is None:
-                print("query not successful")
-            if t:
-                time.sleep(t)
-            else:
-                time.sleep(self.default_sleep_time)
+        result = self.gremlin_client.submit('g.V().drop()')
+        if result is not None:
+            print('--- result_below ---')
+            print(result.one())
 
     def execute_load_queries(self, db, coll):
         infile  = self.c.load_queries_txt_filename()
@@ -237,27 +231,6 @@ class Main:
                 print('load_sync - query_successful')
                 return
 
-    def load_loop_async(self, idx):
-        if idx < len(self.load_queries):
-            query = self.load_queries[idx]
-            epoch1, epoch2 = None, None
-            if query:
-                epoch1 = time.time()
-                print('load_loop_async idx: {} epoch: {} query: {}'.format(idx, epoch1, query))
-                callback = self.gremlin_client.submitAsync(query)
-                if callback.result() is None:
-                    epoch2 = time.time()
-                    print('load_loop_async - QUERY_NOT_SUCCESSFUL; elapsed: {}'.format(epoch2 - epoch1))
-                    time.sleep(self.default_sleep_time)
-                    self.load_loop_async(idx + 1)  # <-- recursively call this function
-                else:
-                    epoch2 = time.time()
-                    print('load_loop_async - query_successful; elapsed: {}'.format(epoch2 - epoch1))
-                    time.sleep(self.default_sleep_time)
-                    self.load_loop_async(idx + 1)  # <-- recursively call this function
-        else:
-            print('load_loop_async completed at index {}'.format(idx))
-
     def capture_gremlin_queries_for_doc(self):
         queries_dir = 'queries'
         for dir_name, subdirs, file_names in os.walk(queries_dir):
@@ -276,61 +249,64 @@ class Main:
         qname = sys.argv[4].lower()
         query = None
 
-        if qname == 'countv':
-            query = 'g.V().count()'
-
-        elif qname == 'movie':
+        if qname == 'movie':
             arg = sys.argv[5].lower()
-            id  = self.favorites.translate_to_id(arg)
-            query = "g.V().has('label','movie').has('id','{}')".format(id)
+            id1 = self.favorites.translate_to_id(arg)
+            pk1 = self.id_to_pk(id1)
+            #query = "g.V().has('label','movie').has('id','{}')".format(id)
+            query = "g.V(['{}','{}'])".format(pk1, id1)
 
         elif qname == 'person':
             arg = sys.argv[5].lower()
-            id  = self.favorites.translate_to_id(arg)
-            query = "g.V().has('label','person').has('id','{}')".format(id)
+            id1 = self.favorites.translate_to_id(arg)
+            pk1 = self.id_to_pk(id1)
+            #query = "g.V().has('label','person').has('id','{}')".format(id)
+            query = "g.V(['{}','{}'])".format(pk1, id1)
 
         elif qname == 'edges':
             arg = sys.argv[5].lower()
-            id  = self.favorites.translate_to_id(arg)
-            #query = "g.V('{}').both().as('v').project('vertex', 'edges').by(select('v')).by(bothE().fold())".format(id)
-            query = "g.V('{}').bothE()".format(id)
+            id1 = self.favorites.translate_to_id(arg)
+            pk1 = self.id_to_pk(id1)
+            query = "g.V(['{}','{}']).bothE()".format(pk1, id1)
 
         elif qname == 'vertices':
             arg = sys.argv[5].lower()
-            id  = self.favorites.translate_to_id(arg)
-            query = "g.V('{}').bothE().inV()".format(id)
+            id1 = self.favorites.translate_to_id(arg)
+            pk1 = self.id_to_pk(id1)
+            query = "g.V(['{}','{}']).bothE().inV()".format(pk1, id1)
 
         elif qname == 'knows':
             id1 = self.favorites.translate_to_id(sys.argv[5].lower())
-            #query = "g.V('{}').out('knows').out('knows').out('knows')".format(id1)
-            #query = "g.V('{}').repeat(out('knows')).times(1)".format(id1)
-            query = "g.V('{}').out('knows')".format(id1)
+            pk1 = self.id_to_pk(id1)
+            query = "g.V(['{}','{}']).out('knows')".format(pk1, id1)
 
         elif qname == 'in':
             id1 = self.favorites.translate_to_id(sys.argv[5].lower())
-            #query = "g.V('{}').out('knows').out('knows').out('knows')".format(id1)
-            #query = "g.V('{}').repeat(out('knows')).times(1)".format(id1)
-            query = "g.V('{}').out('in')".format(id1)
+            pk1 = self.id_to_pk(id1)
+            query = "g.V(['{}','{}']).out('in')".format(pk1, id1)
 
         elif qname == 'path':
             arg1 = sys.argv[5].lower()
             arg2 = sys.argv[6].lower()
             id1  = self.favorites.translate_to_id(arg1)
             id2  = self.favorites.translate_to_id(arg2)
-            query = "g.V('{}').repeat(out().simplePath()).until(hasId('{}')).path().limit(3)".format(id1, id2)
+            pk1  = self.id_to_pk(id1)
+            query = "g.V(['{}','{}']).repeat(out().simplePath()).until(hasId('{}')).path().limit(3)".format(pk1, id1, id2)
 
         if query:
             print('qname: {}'.format(qname))
             print('query: {}'.format(query))
+            time.sleep(self.query_sleep_time)
 
-            callback = self.gremlin_client.submitAsync(query)
-            if callback.result() is not None:
+            result = self.gremlin_client.submit(query)
+            if result is not None:
                 print('--- result_below ---')
                 data = dict()
-                r = callback.result().one()
+                print(result)
+                r = result.one()
                 data['qname'] = qname
                 data['query'] = query
-                data['result_count'] = len(r)
+                #data['result_count'] = len(r)
                 data['result'] = r
                 jstr = json.dumps(data, sort_keys=False, indent=2)
                 print(jstr)
@@ -344,6 +320,28 @@ class Main:
                 if True:
                     # Also produce the d3/graph.json file for visualization
                     util = d3.D3Util(outfile)
+
+            # callback = self.gremlin_client.submitAsync(query)
+            # if callback.result() is not None:
+            #     print('--- result_below ---')
+            #     data = dict()
+            #     r = callback.result().one()
+            #     data['qname'] = qname
+            #     data['query'] = query
+            #     data['result_count'] = len(r)
+            #     data['result'] = r
+            #     jstr = json.dumps(data, sort_keys=False, indent=2)
+            #     print(jstr)
+
+            #     outfile = 'tmp/query_{}_{}.json'.format(qname, arrow.utcnow().timestamp)
+            #     with open(outfile, "w") as out:
+            #         out.write(jstr)
+            #         print('--- result_above ---')
+            #         print('file written: {}'.format(outfile))
+
+            #     if True:
+            #         # Also produce the d3/graph.json file for visualization
+            #         util = d3.D3Util(outfile)
         else:
             print('invalid args')
 

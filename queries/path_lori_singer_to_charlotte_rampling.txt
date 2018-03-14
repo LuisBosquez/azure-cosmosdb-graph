@@ -3,12 +3,12 @@ create_client:
 endpoint: wss://cjoakim-cosmosdb-gremlin.gremlin.cosmosdb.azure.com:443/
 username: /dbs/dev/colls/movies
 qname: path
-query: g.V('nm0001742').repeat(out().simplePath()).until(hasId('nm0001648')).path().limit(3)
+query: g.V(['n41','nm0001742']).repeat(out().simplePath()).until(hasId('nm0001648')).path().limit(3)
 --- result_below ---
+<gremlin_python.driver.resultset.ResultSet object at 0x1054129b0>
 {
   "qname": "path",
-  "query": "g.V('nm0001742').repeat(out().simplePath()).until(hasId('nm0001648')).path().limit(3)",
-  "result_count": 3,
+  "query": "g.V(['n41','nm0001742']).repeat(out().simplePath()).until(hasId('nm0001648')).path().limit(3)",
   "result": [
     {
       "labels": [
@@ -23,9 +23,15 @@ query: g.V('nm0001742').repeat(out().simplePath()).until(hasId('nm0001648')).pat
           "label": "person",
           "type": "vertex",
           "properties": {
+            "pk": [
+              {
+                "id": "nm0001742|pk",
+                "value": "n41"
+              }
+            ],
             "name": [
               {
-                "id": "fb444d04-c856-4142-ae57-8cc94b5ba5e4",
+                "id": "626f4005-1788-41a1-af69-dc093ac7efc5",
                 "value": "Lori Singer"
               }
             ]
@@ -36,9 +42,15 @@ query: g.V('nm0001742').repeat(out().simplePath()).until(hasId('nm0001648')).pat
           "label": "person",
           "type": "vertex",
           "properties": {
+            "pk": [
+              {
+                "id": "nm0000102|pk",
+                "value": "n10"
+              }
+            ],
             "name": [
               {
-                "id": "ba749aff-7a72-429e-8bf7-ff40c73e2e18",
+                "id": "c48051a9-c722-48f0-abbe-1f3ccf122b14",
                 "value": "Kevin Bacon"
               }
             ]
@@ -49,9 +61,15 @@ query: g.V('nm0001742').repeat(out().simplePath()).until(hasId('nm0001648')).pat
           "label": "person",
           "type": "vertex",
           "properties": {
+            "pk": [
+              {
+                "id": "nm2225369|pk",
+                "value": "n1491"
+              }
+            ],
             "name": [
               {
-                "id": "821267fa-2080-4c14-8caf-7883890cc074",
+                "id": "1eb88015-5614-4758-978f-9904ca350944",
                 "value": "Jennifer Lawrence"
               }
             ]
@@ -62,9 +80,15 @@ query: g.V('nm0001742').repeat(out().simplePath()).until(hasId('nm0001648')).pat
           "label": "person",
           "type": "vertex",
           "properties": {
+            "pk": [
+              {
+                "id": "nm0001648|pk",
+                "value": "n40"
+              }
+            ],
             "name": [
               {
-                "id": "41d7c9e0-400a-4b64-b212-9e64466822e7",
+                "id": "3d87f3bc-fd6a-4e18-8261-b4d1f2b0bd5d",
                 "value": "Charlotte Rampling"
               }
             ]
@@ -86,9 +110,15 @@ query: g.V('nm0001742').repeat(out().simplePath()).until(hasId('nm0001648')).pat
           "label": "person",
           "type": "vertex",
           "properties": {
+            "pk": [
+              {
+                "id": "nm0001742|pk",
+                "value": "n41"
+              }
+            ],
             "name": [
               {
-                "id": "fb444d04-c856-4142-ae57-8cc94b5ba5e4",
+                "id": "626f4005-1788-41a1-af69-dc093ac7efc5",
                 "value": "Lori Singer"
               }
             ]
@@ -99,9 +129,15 @@ query: g.V('nm0001742').repeat(out().simplePath()).until(hasId('nm0001648')).pat
           "label": "person",
           "type": "vertex",
           "properties": {
+            "pk": [
+              {
+                "id": "nm0000102|pk",
+                "value": "n10"
+              }
+            ],
             "name": [
               {
-                "id": "ba749aff-7a72-429e-8bf7-ff40c73e2e18",
+                "id": "c48051a9-c722-48f0-abbe-1f3ccf122b14",
                 "value": "Kevin Bacon"
               }
             ]
@@ -112,9 +148,15 @@ query: g.V('nm0001742').repeat(out().simplePath()).until(hasId('nm0001648')).pat
           "label": "person",
           "type": "vertex",
           "properties": {
+            "pk": [
+              {
+                "id": "nm0000134|pk",
+                "value": "n11"
+              }
+            ],
             "name": [
               {
-                "id": "40ec0dfa-432e-4838-8fce-1350efb9d7d6",
+                "id": "de4cc98a-d436-4cf5-816b-136177d8ad78",
                 "value": "Robert De Niro"
               }
             ]
@@ -125,9 +167,15 @@ query: g.V('nm0001742').repeat(out().simplePath()).until(hasId('nm0001648')).pat
           "label": "person",
           "type": "vertex",
           "properties": {
+            "pk": [
+              {
+                "id": "nm2225369|pk",
+                "value": "n1491"
+              }
+            ],
             "name": [
               {
-                "id": "821267fa-2080-4c14-8caf-7883890cc074",
+                "id": "1eb88015-5614-4758-978f-9904ca350944",
                 "value": "Jennifer Lawrence"
               }
             ]
@@ -138,9 +186,15 @@ query: g.V('nm0001742').repeat(out().simplePath()).until(hasId('nm0001648')).pat
           "label": "person",
           "type": "vertex",
           "properties": {
+            "pk": [
+              {
+                "id": "nm0001648|pk",
+                "value": "n40"
+              }
+            ],
             "name": [
               {
-                "id": "41d7c9e0-400a-4b64-b212-9e64466822e7",
+                "id": "3d87f3bc-fd6a-4e18-8261-b4d1f2b0bd5d",
                 "value": "Charlotte Rampling"
               }
             ]
@@ -162,9 +216,15 @@ query: g.V('nm0001742').repeat(out().simplePath()).until(hasId('nm0001648')).pat
           "label": "person",
           "type": "vertex",
           "properties": {
+            "pk": [
+              {
+                "id": "nm0001742|pk",
+                "value": "n41"
+              }
+            ],
             "name": [
               {
-                "id": "fb444d04-c856-4142-ae57-8cc94b5ba5e4",
+                "id": "626f4005-1788-41a1-af69-dc093ac7efc5",
                 "value": "Lori Singer"
               }
             ]
@@ -175,9 +235,15 @@ query: g.V('nm0001742').repeat(out().simplePath()).until(hasId('nm0001648')).pat
           "label": "person",
           "type": "vertex",
           "properties": {
+            "pk": [
+              {
+                "id": "nm0000102|pk",
+                "value": "n10"
+              }
+            ],
             "name": [
               {
-                "id": "ba749aff-7a72-429e-8bf7-ff40c73e2e18",
+                "id": "c48051a9-c722-48f0-abbe-1f3ccf122b14",
                 "value": "Kevin Bacon"
               }
             ]
@@ -188,9 +254,15 @@ query: g.V('nm0001742').repeat(out().simplePath()).until(hasId('nm0001648')).pat
           "label": "person",
           "type": "vertex",
           "properties": {
+            "pk": [
+              {
+                "id": "nm0000223|pk",
+                "value": "n14"
+              }
+            ],
             "name": [
               {
-                "id": "f3c35495-6363-4134-99fe-017ccdae87a7",
+                "id": "9b02848d-4c36-474d-ad62-7f71f73bb03e",
                 "value": "Elisabeth Shue"
               }
             ]
@@ -201,9 +273,15 @@ query: g.V('nm0001742').repeat(out().simplePath()).until(hasId('nm0001648')).pat
           "label": "person",
           "type": "vertex",
           "properties": {
+            "pk": [
+              {
+                "id": "nm2225369|pk",
+                "value": "n1491"
+              }
+            ],
             "name": [
               {
-                "id": "821267fa-2080-4c14-8caf-7883890cc074",
+                "id": "1eb88015-5614-4758-978f-9904ca350944",
                 "value": "Jennifer Lawrence"
               }
             ]
@@ -214,9 +292,15 @@ query: g.V('nm0001742').repeat(out().simplePath()).until(hasId('nm0001648')).pat
           "label": "person",
           "type": "vertex",
           "properties": {
+            "pk": [
+              {
+                "id": "nm0001648|pk",
+                "value": "n40"
+              }
+            ],
             "name": [
               {
-                "id": "41d7c9e0-400a-4b64-b212-9e64466822e7",
+                "id": "3d87f3bc-fd6a-4e18-8261-b4d1f2b0bd5d",
                 "value": "Charlotte Rampling"
               }
             ]
@@ -227,6 +311,6 @@ query: g.V('nm0001742').repeat(out().simplePath()).until(hasId('nm0001648')).pat
   ]
 }
 --- result_above ---
-file written: tmp/query_path_1520854278.json
-D3Util#__init__: tmp/query_path_1520854278.json
+file written: tmp/query_path_1521022724.json
+D3Util#__init__: tmp/query_path_1521022724.json
 file written: d3/graph.json

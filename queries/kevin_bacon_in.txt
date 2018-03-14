@@ -3,21 +3,27 @@ create_client:
 endpoint: wss://cjoakim-cosmosdb-gremlin.gremlin.cosmosdb.azure.com:443/
 username: /dbs/dev/colls/movies
 qname: in
-query: g.V('nm0000102').out('in')
+query: g.V(['n10','nm0000102']).out('in')
 --- result_below ---
+<gremlin_python.driver.resultset.ResultSet object at 0x104a74978>
 {
   "qname": "in",
-  "query": "g.V('nm0000102').out('in')",
-  "result_count": 29,
+  "query": "g.V(['n10','nm0000102']).out('in')",
   "result": [
     {
       "id": "tt0087277",
       "label": "movie",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "tt0087277|pk",
+            "value": "t295"
+          }
+        ],
         "title": [
           {
-            "id": "50386697-2885-43e8-a9d3-d43a48c646dc",
+            "id": "906d0e7f-cfb5-4d43-b547-5cc8c859b359",
             "value": "Footloose"
           }
         ]
@@ -28,9 +34,15 @@ query: g.V('nm0000102').out('in')
       "label": "movie",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "tt0091814|pk",
+            "value": "t303"
+          }
+        ],
         "title": [
           {
-            "id": "93d78aac-df8d-4d48-90ed-565680336434",
+            "id": "e49cf3c1-81cc-49bf-9232-c63b76dc5ccf",
             "value": "Quicksilver"
           }
         ]
@@ -41,9 +53,15 @@ query: g.V('nm0000102').out('in')
       "label": "movie",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "tt0092967|pk",
+            "value": "t304"
+          }
+        ],
         "title": [
           {
-            "id": "ba2507b5-7297-463d-8644-bf3738a0b853",
+            "id": "f0719bdb-91af-4a9d-8191-9c80c531013a",
             "value": "End of the Line"
           }
         ]
@@ -54,9 +72,15 @@ query: g.V('nm0000102').out('in')
       "label": "movie",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "tt0093403|pk",
+            "value": "t305"
+          }
+        ],
         "title": [
           {
-            "id": "f6b41187-51dd-4d39-866a-eec36ddece4d",
+            "id": "b3b70b54-d929-4507-8c62-311aef59cf54",
             "value": "Lemon Sky"
           }
         ]
@@ -67,9 +91,15 @@ query: g.V('nm0000102').out('in')
       "label": "movie",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "tt0094318|pk",
+            "value": "t307"
+          }
+        ],
         "title": [
           {
-            "id": "53789095-0c0b-4c4a-8b8d-0cfee735bbeb",
+            "id": "70d2c2b6-c9d0-402c-a8b8-ffea9351e161",
             "value": "White Water Summer"
           }
         ]
@@ -80,9 +110,15 @@ query: g.V('nm0000102').out('in')
       "label": "movie",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "tt0096094|pk",
+            "value": "t309"
+          }
+        ],
         "title": [
           {
-            "id": "79e4e869-d0e8-42b1-9658-c120844dba39",
+            "id": "9c5e98bb-6f88-4cce-ba2c-0a89581368c4",
             "value": "Shes Having a Baby"
           }
         ]
@@ -93,9 +129,15 @@ query: g.V('nm0000102').out('in')
       "label": "movie",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "tt0096926|pk",
+            "value": "t311"
+          }
+        ],
         "title": [
           {
-            "id": "64f19734-4f45-4f75-9e63-642989b91b62",
+            "id": "e2a9fe5a-90f5-4b80-8510-110200c0b133",
             "value": "The Big Picture"
           }
         ]
@@ -106,9 +148,15 @@ query: g.V('nm0000102').out('in')
       "label": "movie",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "tt0097125|pk",
+            "value": "t311"
+          }
+        ],
         "title": [
           {
-            "id": "717f009f-9dcc-4f26-9338-f55f6493be7d",
+            "id": "c30f97ae-0a94-4287-beda-75fbcd7b0272",
             "value": "Criminal Law"
           }
         ]
@@ -119,9 +167,15 @@ query: g.V('nm0000102').out('in')
       "label": "movie",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "tt0099582|pk",
+            "value": "t315"
+          }
+        ],
         "title": [
           {
-            "id": "e3f05b56-fb55-47b8-b9f3-830427155954",
+            "id": "232328e7-07a5-4df9-9179-8496d83b31d8",
             "value": "Flatliners"
           }
         ]
@@ -132,9 +186,15 @@ query: g.V('nm0000102').out('in')
       "label": "movie",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "tt0100814|pk",
+            "value": "t317"
+          }
+        ],
         "title": [
           {
-            "id": "25385f8b-b918-4c68-b126-07c029c2b71f",
+            "id": "b5cfe415-eaa8-4a02-8e5d-1e5ee0a76dbc",
             "value": "Tremors"
           }
         ]
@@ -145,9 +205,15 @@ query: g.V('nm0000102').out('in')
       "label": "movie",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "tt0102011|pk",
+            "value": "t319"
+          }
+        ],
         "title": [
           {
-            "id": "25afa834-296f-4337-b1d5-9ef59cc5836c",
+            "id": "675033e3-2012-4d1d-a96c-6b28e3df863c",
             "value": "He Said, She Said"
           }
         ]
@@ -158,9 +224,15 @@ query: g.V('nm0000102').out('in')
       "label": "movie",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "tt0102733|pk",
+            "value": "t320"
+          }
+        ],
         "title": [
           {
-            "id": "237f1716-bc34-4a23-8535-82c4e1f4c0a8",
+            "id": "685d8a39-08f9-41fc-8bbe-3d08eb30c28b",
             "value": "Pyrates"
           }
         ]
@@ -171,9 +243,15 @@ query: g.V('nm0000102').out('in')
       "label": "movie",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "tt0102741|pk",
+            "value": "t320"
+          }
+        ],
         "title": [
           {
-            "id": "fe8bb3ed-fcb2-425b-ac23-6c6e1d58a4d7",
+            "id": "8bf11564-e11c-4270-8038-305a1cbcc6be",
             "value": "Queens Logic"
           }
         ]
@@ -184,9 +262,15 @@ query: g.V('nm0000102').out('in')
       "label": "movie",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "tt0104257|pk",
+            "value": "t322"
+          }
+        ],
         "title": [
           {
-            "id": "49847537-7b63-4d99-bd48-abd954278ef2",
+            "id": "04ff3888-abb0-4588-b920-9da08b3471f1",
             "value": "A Few Good Men"
           }
         ]
@@ -197,9 +281,15 @@ query: g.V('nm0000102').out('in')
       "label": "movie",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "tt0109067|pk",
+            "value": "t330"
+          }
+        ],
         "title": [
           {
-            "id": "63efc639-1003-4b6c-a2cf-5532725fc116",
+            "id": "5721ab32-bc5f-45dd-b195-1e212e4ecb37",
             "value": "The Air Up There"
           }
         ]
@@ -210,9 +300,15 @@ query: g.V('nm0000102').out('in')
       "label": "movie",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "tt0110997|pk",
+            "value": "t333"
+          }
+        ],
         "title": [
           {
-            "id": "93fafac6-0008-4e75-a0f6-a7ea59564047",
+            "id": "4c577100-6d7b-448b-99c6-731663d70659",
             "value": "The River Wild"
           }
         ]
@@ -223,9 +319,15 @@ query: g.V('nm0000102').out('in')
       "label": "movie",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "tt0112384|pk",
+            "value": "t335"
+          }
+        ],
         "title": [
           {
-            "id": "b3bddd35-09a2-4a81-8482-c5b955f6b8f7",
+            "id": "363e4ed1-83a9-4aff-a95f-c65c45465057",
             "value": "Apollo 13"
           }
         ]
@@ -236,9 +338,15 @@ query: g.V('nm0000102').out('in')
       "label": "movie",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "tt0112453|pk",
+            "value": "t335"
+          }
+        ],
         "title": [
           {
-            "id": "4f1b35ef-430b-4174-99bd-9735282358dd",
+            "id": "dfc855e2-71c0-4b59-bdb2-92e3f04f4ff2",
             "value": "Balto"
           }
         ]
@@ -249,9 +357,15 @@ query: g.V('nm0000102').out('in')
       "label": "movie",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "tt0113870|pk",
+            "value": "t337"
+          }
+        ],
         "title": [
           {
-            "id": "4bc3ff9e-ccb2-42aa-bcaf-1010c5990d34",
+            "id": "6734a15d-8ca6-47c4-beb7-a00a08cc1a0f",
             "value": "Murder in the First"
           }
         ]
@@ -262,9 +376,15 @@ query: g.V('nm0000102').out('in')
       "label": "movie",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "tt0117665|pk",
+            "value": "t343"
+          }
+        ],
         "title": [
           {
-            "id": "1a98280a-67eb-495b-b096-835e4a439a9f",
+            "id": "6a56eced-5307-49dc-ad99-3abad0192399",
             "value": "Sleepers"
           }
         ]
@@ -275,9 +395,15 @@ query: g.V('nm0000102').out('in')
       "label": "movie",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "tt0118980|pk",
+            "value": "t344"
+          }
+        ],
         "title": [
           {
-            "id": "95c7afc4-c631-40e3-9f9f-f83c9547bae6",
+            "id": "a4d7a400-9252-4d56-9846-1f65929fc54b",
             "value": "Digging to China"
           }
         ]
@@ -288,101 +414,16 @@ query: g.V('nm0000102').out('in')
       "label": "movie",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "tt0119896|pk",
+            "value": "t346"
+          }
+        ],
         "title": [
           {
-            "id": "66f10328-6f6c-4075-8dbe-0ff65f38495b",
+            "id": "80d3ddaa-c6f0-4488-bea2-c23fb68c515d",
             "value": "Picture Perfect"
-          }
-        ]
-      }
-    },
-    {
-      "id": "tt0120303",
-      "label": "movie",
-      "type": "vertex",
-      "properties": {
-        "title": [
-          {
-            "id": "52657561-edec-4995-a093-cf5de8b4068b",
-            "value": "Telling Lies in America"
-          }
-        ]
-      }
-    },
-    {
-      "id": "tt0120890",
-      "label": "movie",
-      "type": "vertex",
-      "properties": {
-        "title": [
-          {
-            "id": "e4a33b06-cb77-433f-ac20-9f519a597848",
-            "value": "Wild Things"
-          }
-        ]
-      }
-    },
-    {
-      "id": "tt0123191",
-      "label": "movie",
-      "type": "vertex",
-      "properties": {
-        "title": [
-          {
-            "id": "d74e8eaf-251b-4c01-8dd6-b70f132b29a0",
-            "value": "New York Skyride"
-          }
-        ]
-      }
-    },
-    {
-      "id": "tt0156812",
-      "label": "movie",
-      "type": "vertex",
-      "properties": {
-        "title": [
-          {
-            "id": "ae976e2c-13f0-4a75-b3fa-59042ea24fb7",
-            "value": "My Dog Skip"
-          }
-        ]
-      }
-    },
-    {
-      "id": "tt0164052",
-      "label": "movie",
-      "type": "vertex",
-      "properties": {
-        "title": [
-          {
-            "id": "01382785-cccc-4199-a346-d3e1b04537f7",
-            "value": "Hollow Man"
-          }
-        ]
-      }
-    },
-    {
-      "id": "tt0164181",
-      "label": "movie",
-      "type": "vertex",
-      "properties": {
-        "title": [
-          {
-            "id": "bd4bfb81-f516-4a6b-be49-e0b119848c38",
-            "value": "Stir of Echoes"
-          }
-        ]
-      }
-    },
-    {
-      "id": "tt0280380",
-      "label": "movie",
-      "type": "vertex",
-      "properties": {
-        "title": [
-          {
-            "id": "453a65e9-c84e-4db6-ae47-f97bcdb7633f",
-            "value": "Trapped"
           }
         ]
       }
@@ -390,5 +431,5 @@ query: g.V('nm0000102').out('in')
   ]
 }
 --- result_above ---
-file written: tmp/query_in_1520854148.json
-D3Util#__init__: tmp/query_in_1520854148.json
+file written: tmp/query_in_1521022654.json
+D3Util#__init__: tmp/query_in_1521022654.json

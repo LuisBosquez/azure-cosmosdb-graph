@@ -3,21 +3,27 @@ create_client:
 endpoint: wss://cjoakim-cosmosdb-gremlin.gremlin.cosmosdb.azure.com:443/
 username: /dbs/dev/colls/movies
 qname: knows
-query: g.V('nm0000210').out('knows')
+query: g.V(['n14','nm0000210']).out('knows')
 --- result_below ---
+<gremlin_python.driver.resultset.ResultSet object at 0x102687978>
 {
   "qname": "knows",
-  "query": "g.V('nm0000210').out('knows')",
-  "result_count": 29,
+  "query": "g.V(['n14','nm0000210']).out('knows')",
   "result": [
     {
       "id": "nm0000047",
       "label": "person",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "nm0000047|pk",
+            "value": "n6"
+          }
+        ],
         "name": [
           {
-            "id": "6cc0d24d-b3a4-4e17-870b-d0e67f7f3fe5",
+            "id": "fe8f6046-9208-4f4f-8fad-c2bb84290238",
             "value": "Sophia Loren"
           }
         ]
@@ -28,9 +34,15 @@ query: g.V('nm0000210').out('knows')
       "label": "person",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "nm0000052|pk",
+            "value": "n7"
+          }
+        ],
         "name": [
           {
-            "id": "c7ed87c2-1a47-429d-929f-568ebf149b81",
+            "id": "28b5da99-7ba5-4bcc-ae40-532fd06ea5f0",
             "value": "Marcello Mastroianni"
           }
         ]
@@ -41,9 +53,15 @@ query: g.V('nm0000210').out('knows')
       "label": "person",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "nm0000093|pk",
+            "value": "n9"
+          }
+        ],
         "name": [
           {
-            "id": "867ab2c5-552f-4285-871a-6c184ff39422",
+            "id": "aeedb60c-2a37-4980-af99-77ca1e829c7e",
             "value": "Brad Pitt"
           }
         ]
@@ -54,9 +72,15 @@ query: g.V('nm0000210').out('knows')
       "label": "person",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "nm0000095|pk",
+            "value": "n9"
+          }
+        ],
         "name": [
           {
-            "id": "427ed01a-adc9-4689-8472-43364755de9d",
+            "id": "24c23b7c-32b1-4410-bc5e-b20675fe6cf1",
             "value": "Woody Allen"
           }
         ]
@@ -67,9 +91,15 @@ query: g.V('nm0000210').out('knows')
       "label": "person",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "nm0000098|pk",
+            "value": "n9"
+          }
+        ],
         "name": [
           {
-            "id": "f510d10d-5bff-4b7d-b5e0-2a8c5eebaab3",
+            "id": "5370e7f0-c46b-4982-94dd-ad080cbede64",
             "value": "Jennifer Aniston"
           }
         ]
@@ -80,9 +110,15 @@ query: g.V('nm0000210').out('knows')
       "label": "person",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "nm0000102|pk",
+            "value": "n10"
+          }
+        ],
         "name": [
           {
-            "id": "ba749aff-7a72-429e-8bf7-ff40c73e2e18",
+            "id": "c48051a9-c722-48f0-abbe-1f3ccf122b14",
             "value": "Kevin Bacon"
           }
         ]
@@ -93,9 +129,15 @@ query: g.V('nm0000210').out('knows')
       "label": "person",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "nm0000106|pk",
+            "value": "n10"
+          }
+        ],
         "name": [
           {
-            "id": "3301b7d7-b82b-4080-b049-7d5641c620bd",
+            "id": "26fffa87-4909-4de6-bfaf-2912844801c4",
             "value": "Drew Barrymore"
           }
         ]
@@ -106,9 +148,15 @@ query: g.V('nm0000210').out('knows')
       "label": "person",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "nm0000114|pk",
+            "value": "n10"
+          }
+        ],
         "name": [
           {
-            "id": "667ecb35-e102-4ffd-84c2-05d0dc4c4b85",
+            "id": "7b2de26d-1cde-466a-8f6b-52e691f35ee0",
             "value": "Steve Buscemi"
           }
         ]
@@ -119,9 +167,15 @@ query: g.V('nm0000210').out('knows')
       "label": "person",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "nm0000115|pk",
+            "value": "n10"
+          }
+        ],
         "name": [
           {
-            "id": "c4d9506f-f221-44fc-82ed-566626b20abd",
+            "id": "ff40a7b9-838a-4276-adcf-8da6d6cf7cfc",
             "value": "Nicolas Cage"
           }
         ]
@@ -132,9 +186,15 @@ query: g.V('nm0000210').out('knows')
       "label": "person",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "nm0000123|pk",
+            "value": "n11"
+          }
+        ],
         "name": [
           {
-            "id": "553db3ec-a3e4-408b-a1b0-00d6d0ba10a0",
+            "id": "8c781557-8ecf-49f0-93a7-bafef761525e",
             "value": "George Clooney"
           }
         ]
@@ -145,9 +205,15 @@ query: g.V('nm0000210').out('knows')
       "label": "person",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "nm0000131|pk",
+            "value": "n11"
+          }
+        ],
         "name": [
           {
-            "id": "59eabe9d-cf7d-4abe-85c2-8ce67a47d0f1",
+            "id": "3e422103-1497-4a7e-b31c-10af8b4cd8ee",
             "value": "John Cusack"
           }
         ]
@@ -158,9 +224,15 @@ query: g.V('nm0000210').out('knows')
       "label": "person",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "nm0000139|pk",
+            "value": "n11"
+          }
+        ],
         "name": [
           {
-            "id": "a27082d4-9478-469e-8e8f-91f995300a9b",
+            "id": "57f51332-c530-44ef-b568-3cb23e1047a2",
             "value": "Cameron Diaz"
           }
         ]
@@ -171,9 +243,15 @@ query: g.V('nm0000210').out('knows')
       "label": "person",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "nm0000141|pk",
+            "value": "n11"
+          }
+        ],
         "name": [
           {
-            "id": "80c7cd99-f56a-466b-bd8e-d8ea98b28727",
+            "id": "5a650e84-df72-4199-b86c-8efb33b0c8b5",
             "value": "David Duchovny"
           }
         ]
@@ -184,9 +262,15 @@ query: g.V('nm0000210').out('knows')
       "label": "person",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "nm0000152|pk",
+            "value": "n12"
+          }
+        ],
         "name": [
           {
-            "id": "4fd27782-4206-4eda-a04b-4fadbd35a71e",
+            "id": "069b03ee-c460-4c42-be40-0a39470c6106",
             "value": "Richard Gere"
           }
         ]
@@ -197,9 +281,15 @@ query: g.V('nm0000210').out('knows')
       "label": "person",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "nm0000154|pk",
+            "value": "n12"
+          }
+        ],
         "name": [
           {
-            "id": "606e6b47-9da7-4ca4-96d7-ed4084f15771",
+            "id": "9bde4f1b-3ec5-4b86-8306-c55983f64140",
             "value": "Mel Gibson"
           }
         ]
@@ -210,9 +300,15 @@ query: g.V('nm0000210').out('knows')
       "label": "person",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "nm0000158|pk",
+            "value": "n12"
+          }
+        ],
         "name": [
           {
-            "id": "09eaa3fb-3143-44ba-8d18-823589dcbd9b",
+            "id": "551644a9-df4e-4625-86b6-fd95fded6960",
             "value": "Tom Hanks"
           }
         ]
@@ -223,9 +319,15 @@ query: g.V('nm0000210').out('knows')
       "label": "person",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "nm0000163|pk",
+            "value": "n12"
+          }
+        ],
         "name": [
           {
-            "id": "c3e91883-1015-4134-87bc-0374c32e4e0b",
+            "id": "cca1797e-3051-4364-8230-8af68de4d370",
             "value": "Dustin Hoffman"
           }
         ]
@@ -236,9 +338,15 @@ query: g.V('nm0000210').out('knows')
       "label": "person",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "nm0000173|pk",
+            "value": "n13"
+          }
+        ],
         "name": [
           {
-            "id": "c08d882c-4ffa-4252-beb0-e57720b9eef8",
+            "id": "2b24989a-0dbd-4f1e-b64a-b98dca9d69bf",
             "value": "Nicole Kidman"
           }
         ]
@@ -249,9 +357,15 @@ query: g.V('nm0000210').out('knows')
       "label": "person",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "nm0000179|pk",
+            "value": "n13"
+          }
+        ],
         "name": [
           {
-            "id": "fe371d56-ed4f-4037-a164-e109d2db5dc1",
+            "id": "a9982663-b115-4487-9aac-c01e3fd9e5fa",
             "value": "Jude Law"
           }
         ]
@@ -262,9 +376,15 @@ query: g.V('nm0000210').out('knows')
       "label": "person",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "nm0000204|pk",
+            "value": "n14"
+          }
+        ],
         "name": [
           {
-            "id": "be83a66d-30c4-4c03-92ca-c3174e499d9f",
+            "id": "4d01db04-af8a-4f0d-adbc-2ff114ca61be",
             "value": "Natalie Portman"
           }
         ]
@@ -275,9 +395,15 @@ query: g.V('nm0000210').out('knows')
       "label": "person",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "nm0000215|pk",
+            "value": "n14"
+          }
+        ],
         "name": [
           {
-            "id": "94445504-0aaa-4324-8098-1ce3c16bb10f",
+            "id": "744532bc-5e05-4ec9-8b9c-c3b74885cc21",
             "value": "Susan Sarandon"
           }
         ]
@@ -288,101 +414,16 @@ query: g.V('nm0000210').out('knows')
       "label": "person",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "nm0000243|pk",
+            "value": "n15"
+          }
+        ],
         "name": [
           {
-            "id": "1427a2b4-2100-4e3f-a293-11e451b83a3d",
+            "id": "cdd9019b-32a5-4ab5-a5e9-bcc1da5aa942",
             "value": "Denzel Washington"
-          }
-        ]
-      }
-    },
-    {
-      "id": "nm0000245",
-      "label": "person",
-      "type": "vertex",
-      "properties": {
-        "name": [
-          {
-            "id": "7e25c047-b69f-4e68-8f6f-8e362115ce30",
-            "value": "Robin Williams"
-          }
-        ]
-      }
-    },
-    {
-      "id": "nm0000287",
-      "label": "person",
-      "type": "vertex",
-      "properties": {
-        "name": [
-          {
-            "id": "7d279e2f-e841-47c9-a5aa-55e86b0a9319",
-            "value": "William Baldwin"
-          }
-        ]
-      }
-    },
-    {
-      "id": "nm0000345",
-      "label": "person",
-      "type": "vertex",
-      "properties": {
-        "name": [
-          {
-            "id": "b7a080b2-76bf-4854-bde2-3152a0285994",
-            "value": "Billy Crystal"
-          }
-        ]
-      }
-    },
-    {
-      "id": "nm0000349",
-      "label": "person",
-      "type": "vertex",
-      "properties": {
-        "name": [
-          {
-            "id": "d933c900-74b5-4748-b8aa-854be36b4e27",
-            "value": "Joan Cusack"
-          }
-        ]
-      }
-    },
-    {
-      "id": "nm0000352",
-      "label": "person",
-      "type": "vertex",
-      "properties": {
-        "name": [
-          {
-            "id": "e3849da5-5aff-4da2-baeb-1613cac12d3f",
-            "value": "Vincent DOnofrio"
-          }
-        ]
-      }
-    },
-    {
-      "id": "nm0000354",
-      "label": "person",
-      "type": "vertex",
-      "properties": {
-        "name": [
-          {
-            "id": "4717cf90-726b-47f6-ac43-fbaf65067f78",
-            "value": "Matt Damon"
-          }
-        ]
-      }
-    },
-    {
-      "id": "nm0000379",
-      "label": "person",
-      "type": "vertex",
-      "properties": {
-        "name": [
-          {
-            "id": "1ebf94f4-b9eb-419a-a406-559970585368",
-            "value": "Kirsten Dunst"
           }
         ]
       }
@@ -390,5 +431,5 @@ query: g.V('nm0000210').out('knows')
   ]
 }
 --- result_above ---
-file written: tmp/query_knows_1520854216.json
-D3Util#__init__: tmp/query_knows_1520854216.json
+file written: tmp/query_knows_1521022691.json
+D3Util#__init__: tmp/query_knows_1521022691.json

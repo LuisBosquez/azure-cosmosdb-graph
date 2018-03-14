@@ -3,15 +3,15 @@ create_client:
 endpoint: wss://cjoakim-cosmosdb-gremlin.gremlin.cosmosdb.azure.com:443/
 username: /dbs/dev/colls/movies
 qname: edges
-query: g.V('nm0000102').bothE()
+query: g.V(['n10','nm0000102']).bothE()
 --- result_below ---
+<gremlin_python.driver.resultset.ResultSet object at 0x10329e940>
 {
   "qname": "edges",
-  "query": "g.V('nm0000102').bothE()",
-  "result_count": 22,
+  "query": "g.V(['n10','nm0000102']).bothE()",
   "result": [
     {
-      "id": "37cb073f-4279-443e-85b4-39050c533fd7",
+      "id": "2dc23536-3e48-4330-8055-9bb1679df250",
       "label": "in",
       "type": "edge",
       "inVLabel": "movie",
@@ -23,7 +23,7 @@ query: g.V('nm0000102').bothE()
       }
     },
     {
-      "id": "4c7b1787-761c-4316-9667-62db954cb9a1",
+      "id": "2cf0ef87-f74d-4f4c-ac33-d4d903325c69",
       "label": "in",
       "type": "edge",
       "inVLabel": "movie",
@@ -35,7 +35,7 @@ query: g.V('nm0000102').bothE()
       }
     },
     {
-      "id": "342690ae-47a8-4e3f-abb2-764ef21e234e",
+      "id": "3a8df865-1f46-4e87-86a3-505832bc6c86",
       "label": "in",
       "type": "edge",
       "inVLabel": "movie",
@@ -47,7 +47,7 @@ query: g.V('nm0000102').bothE()
       }
     },
     {
-      "id": "60243380-68e4-48f7-a0a7-03c2dd728fc8",
+      "id": "f291973e-7ff1-487d-8748-d051f0a8ff98",
       "label": "in",
       "type": "edge",
       "inVLabel": "movie",
@@ -59,7 +59,7 @@ query: g.V('nm0000102').bothE()
       }
     },
     {
-      "id": "da5606d9-bb1e-472a-96b5-ae7151578a28",
+      "id": "aceda8b8-2b69-426f-a16b-51b30ec8c730",
       "label": "in",
       "type": "edge",
       "inVLabel": "movie",
@@ -71,7 +71,7 @@ query: g.V('nm0000102').bothE()
       }
     },
     {
-      "id": "9d6306fc-45ee-416b-8400-2173dc014de1",
+      "id": "a41920c5-7de2-4038-af5f-b9bab5904c92",
       "label": "in",
       "type": "edge",
       "inVLabel": "movie",
@@ -83,7 +83,7 @@ query: g.V('nm0000102').bothE()
       }
     },
     {
-      "id": "6b06c93f-8e88-436f-84fa-5ac96b410970",
+      "id": "59b14bb0-6d9b-4d43-8376-d3a44256f037",
       "label": "in",
       "type": "edge",
       "inVLabel": "movie",
@@ -95,7 +95,7 @@ query: g.V('nm0000102').bothE()
       }
     },
     {
-      "id": "dfeecce0-cd6c-4b54-8cbb-98e8c65d4840",
+      "id": "4b2b6377-0558-4102-8086-f298ac34e3bb",
       "label": "in",
       "type": "edge",
       "inVLabel": "movie",
@@ -107,7 +107,7 @@ query: g.V('nm0000102').bothE()
       }
     },
     {
-      "id": "36cbb925-758c-4622-ad7b-54d8dab8434a",
+      "id": "09e52f89-4f94-4c54-8a24-977c4926215e",
       "label": "in",
       "type": "edge",
       "inVLabel": "movie",
@@ -119,7 +119,7 @@ query: g.V('nm0000102').bothE()
       }
     },
     {
-      "id": "86985aa3-0e4e-4c18-b581-08dfb4a81a59",
+      "id": "94e9e0b6-dcfe-4728-ac53-a1096a6670ed",
       "label": "in",
       "type": "edge",
       "inVLabel": "movie",
@@ -131,7 +131,7 @@ query: g.V('nm0000102').bothE()
       }
     },
     {
-      "id": "46ef0d77-0db9-4307-b045-3ede76831ee4",
+      "id": "2843ab09-b232-4997-afe7-8bb0d9a8a041",
       "label": "in",
       "type": "edge",
       "inVLabel": "movie",
@@ -143,7 +143,7 @@ query: g.V('nm0000102').bothE()
       }
     },
     {
-      "id": "61d5ed93-fc76-4a64-87ae-3470c95d0248",
+      "id": "c5d70f2e-9d75-4e12-9e31-2d818f831bf3",
       "label": "in",
       "type": "edge",
       "inVLabel": "movie",
@@ -155,7 +155,7 @@ query: g.V('nm0000102').bothE()
       }
     },
     {
-      "id": "88a82a4d-e7ad-4f03-834e-e73877f9b337",
+      "id": "c90ddb2e-7279-4e24-b3e4-27766006709c",
       "label": "in",
       "type": "edge",
       "inVLabel": "movie",
@@ -167,7 +167,7 @@ query: g.V('nm0000102').bothE()
       }
     },
     {
-      "id": "6dd123b5-ce7f-4efc-a30b-6f2efb43931d",
+      "id": "de7984b8-c60f-4886-b46c-a8ba2127c51e",
       "label": "in",
       "type": "edge",
       "inVLabel": "movie",
@@ -179,7 +179,7 @@ query: g.V('nm0000102').bothE()
       }
     },
     {
-      "id": "cfa2a709-2981-408c-b9f9-c9dd8c7db379",
+      "id": "ac59e386-b415-464b-a76c-7ae7f87eb5d8",
       "label": "in",
       "type": "edge",
       "inVLabel": "movie",
@@ -191,7 +191,7 @@ query: g.V('nm0000102').bothE()
       }
     },
     {
-      "id": "71a51f4b-8594-4d35-837a-1bf6c40b2d34",
+      "id": "70e73cbf-e8cd-467d-88b7-3919be9d1543",
       "label": "in",
       "type": "edge",
       "inVLabel": "movie",
@@ -203,7 +203,7 @@ query: g.V('nm0000102').bothE()
       }
     },
     {
-      "id": "567418a1-a7d6-49b7-8d3a-aee262b03967",
+      "id": "0f23096d-9e5e-4a03-86ef-e045e3734f1d",
       "label": "in",
       "type": "edge",
       "inVLabel": "movie",
@@ -215,7 +215,7 @@ query: g.V('nm0000102').bothE()
       }
     },
     {
-      "id": "1e2f62ab-41be-4438-a5ef-af35b79c1b39",
+      "id": "bb42ada8-30c1-47b0-9667-2ae1fcc8813d",
       "label": "in",
       "type": "edge",
       "inVLabel": "movie",
@@ -227,7 +227,7 @@ query: g.V('nm0000102').bothE()
       }
     },
     {
-      "id": "2068b6e9-fe5d-43f7-a814-b4d7fc2200c6",
+      "id": "b06218bf-1e4a-44f2-95cc-74f7fc6f6c9c",
       "label": "in",
       "type": "edge",
       "inVLabel": "movie",
@@ -239,7 +239,7 @@ query: g.V('nm0000102').bothE()
       }
     },
     {
-      "id": "2789369a-3807-4a9d-95de-0c2d10706e42",
+      "id": "fe29fe5a-d30b-4e21-8c48-d8738d8b95f0",
       "label": "in",
       "type": "edge",
       "inVLabel": "movie",
@@ -251,7 +251,7 @@ query: g.V('nm0000102').bothE()
       }
     },
     {
-      "id": "06a13844-7ced-43e7-8615-7105a9a2b029",
+      "id": "c8abca16-adae-407b-8a90-076ce64d69cd",
       "label": "in",
       "type": "edge",
       "inVLabel": "movie",
@@ -263,7 +263,7 @@ query: g.V('nm0000102').bothE()
       }
     },
     {
-      "id": "7fcd0b6d-2615-459a-9ec9-5b8ea610eacf",
+      "id": "938e072e-f335-47b5-ae61-7e33954ff5d3",
       "label": "in",
       "type": "edge",
       "inVLabel": "movie",
@@ -277,5 +277,5 @@ query: g.V('nm0000102').bothE()
   ]
 }
 --- result_above ---
-file written: tmp/query_edges_1520854179.json
-D3Util#__init__: tmp/query_edges_1520854179.json
+file written: tmp/query_edges_1521022894.json
+D3Util#__init__: tmp/query_edges_1521022894.json

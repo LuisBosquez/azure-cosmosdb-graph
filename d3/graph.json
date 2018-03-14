@@ -88,5 +88,5 @@
     }
   ],
   "qname": "path",
-  "query": "g.V('nm0001742').repeat(out().simplePath()).until(hasId('nm0205626')).path().limit(3)"
+  "query": "g.V(['n41','nm0001742']).repeat(out().simplePath()).until(hasId('nm0205626')).path().limit(3)"
 }

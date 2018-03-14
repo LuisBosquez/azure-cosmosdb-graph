@@ -3,21 +3,27 @@ create_client:
 endpoint: wss://cjoakim-cosmosdb-gremlin.gremlin.cosmosdb.azure.com:443/
 username: /dbs/dev/colls/movies
 qname: in
-query: g.V('nm0001742').out('in')
+query: g.V(['n41','nm0001742']).out('in')
 --- result_below ---
+<gremlin_python.driver.resultset.ResultSet object at 0x10e485908>
 {
   "qname": "in",
-  "query": "g.V('nm0001742').out('in')",
-  "result_count": 2,
+  "query": "g.V(['n41','nm0001742']).out('in')",
   "result": [
     {
       "id": "tt0087277",
       "label": "movie",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "tt0087277|pk",
+            "value": "t295"
+          }
+        ],
         "title": [
           {
-            "id": "50386697-2885-43e8-a9d3-d43a48c646dc",
+            "id": "906d0e7f-cfb5-4d43-b547-5cc8c859b359",
             "value": "Footloose"
           }
         ]
@@ -28,9 +34,15 @@ query: g.V('nm0001742').out('in')
       "label": "movie",
       "type": "vertex",
       "properties": {
+        "pk": [
+          {
+            "id": "tt0089543|pk",
+            "value": "t299"
+          }
+        ],
         "title": [
           {
-            "id": "417da12c-14bf-4a09-9c27-aa14d8d08914",
+            "id": "358521a1-81cc-41ce-a53b-67410321f5ae",
             "value": "The Man with One Red Shoe"
           }
         ]
@@ -39,5 +51,5 @@ query: g.V('nm0001742').out('in')
   ]
 }
 --- result_above ---
-file written: tmp/query_in_1520854172.json
-D3Util#__init__: tmp/query_in_1520854172.json
+file written: tmp/query_in_1521022664.json
+D3Util#__init__: tmp/query_in_1521022664.json

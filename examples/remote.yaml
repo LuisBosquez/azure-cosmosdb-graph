@@ -1,7 +1,7 @@
 # Example remote.yaml file for the Java Gremlin client.
 # Copy this file to the src/ directory and change the xxx values to your
 # Azure CosmosDB Gremlin database name and key.
-# Chris Joakim, Microsoft, 2018/03/13
+# Chris Joakim, Microsoft, 2018/03/14
 
 hosts: [xxx.gremlin.cosmosdb.azure.com]
 port: 443
