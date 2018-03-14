@@ -10,6 +10,12 @@ import java.io.File;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Vector;
+
 /**
  * Java command-line program to load and query the Azure CosmosDB with Gremlin API.
  * See API at http://tinkerpop.apache.org/javadocs/3.2.7/full/
@@ -17,7 +23,7 @@ import java.util.concurrent.CompletableFuture;
  * See https://docs.microsoft.com/en-us/azure/cosmos-db/partition-data
  *
  * @author Chris Joakim, Microsoft
- * @version 2018/03/13
+ * @version 2018/03/14
  */
 public class GremlinClient {
 
@@ -158,14 +164,14 @@ public class GremlinClient {
         System.out.println("loadDatabase completed; final loadSleepMs:   " + loadSleepMs);
         System.out.println("loadDatabase completed; documentsLoaded:     " + documentsLoaded);
 
-        // Actual results 3/13pm:
+        // Actual results 3/14 am:
         // loadDatabase completed; connected:           true
         // loadDatabase completed; connectCount:        1
         // loadDatabase completed; consecutiveFailures: false
         // loadDatabase completed; loadFailureCount:    0
         // loadDatabase completed; final loadSleepMs:   20
-        // loadDatabase completed; documentsLoaded:     4518
-        // main() completed in 473356 ms, 7.8892665 minutes
+        // loadDatabase completed; documentsLoaded:     7149
+        // main() completed in 647324 ms, 10.788733 minutes
     }
 
     private static boolean loadDocument(int idx, String query) {
@@ -212,7 +218,49 @@ public class GremlinClient {
         String infile = dataDir + File.separator + "processed/load_queries.txt";
         System.out.println("reading file: " + infile);
         FileUtil util = new FileUtil();
-        return util.readFileAsLines(infile);
+        return readFileAsLines(infile);
+    }
+
+    private static String[] readFileAsLines(String filename) throws Exception {
+
+        File file = null;
+        FileReader fileReader = null;
+        BufferedReader buffReader = null;
+        boolean continueToRead = true;
+        Vector<String> vector = new Vector<String>();
+        String[] array = null;
+
+        try {
+            // Use a BufferedReader so as to use the 'readLine()' method.
+            file = new File(filename);
+            fileReader = new FileReader(file);
+            buffReader = new BufferedReader(fileReader);
+
+            while (continueToRead) {
+                String lineRead = buffReader.readLine();
+                if (lineRead == null) {
+                    continueToRead = false;
+                } else {
+                    vector.addElement(lineRead);
+                }
+            }
+            array = new String[vector.size()];
+            vector.copyInto(array);
+        }
+        catch (Exception ex) {
+            throw ex;
+        }
+        finally {
+            if (fileReader != null) {
+                try {
+                    fileReader.close();
+                }
+                catch (IOException ex) {
+                    // do nothing; we tried our best
+                }
+            }
+        }
+        return array;
     }
 
     private static boolean booleanFlag(String flag) {
