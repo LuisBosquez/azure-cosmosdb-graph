@@ -1,0 +1,12 @@
+# Example remote.yaml file for the Java Gremlin client.
+# Copy this file to the src/ directory and change the xxx values to your
+# Azure CosmosDB Gremlin database name and key.
+# Chris Joakim, Microsoft, 2018/03/13
+
+hosts: [xxx.gremlin.cosmosdb.azure.com]
+port: 443
+username: /dbs/dev/colls/movies
+password: xxx
+connectionPool: {
+  enableSsl: true}
+serializer: { className: org.apache.tinkerpop.gremlin.driver.ser.GraphSONMessageSerializerV1d0, config: { serializeResultToString: true }}

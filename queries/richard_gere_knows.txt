@@ -1,0 +1,394 @@
+function: query
+create_client:
+endpoint: wss://cjoakim-cosmosdb-gremlin.gremlin.cosmosdb.azure.com:443/
+username: /dbs/dev/colls/movies
+qname: knows
+query: g.V('nm0000152').out('knows')
+--- result_below ---
+{
+  "qname": "knows",
+  "query": "g.V('nm0000152').out('knows')",
+  "result_count": 29,
+  "result": [
+    {
+      "id": "nm0000107",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "19211552-c93f-408e-a341-39d9d2bce51d",
+            "value": "Kim Basinger"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000114",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "667ecb35-e102-4ffd-84c2-05d0dc4c4b85",
+            "value": "Steve Buscemi"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000125",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "3f698ed0-ff7d-4367-b6db-2c0164246312",
+            "value": "Sean Connery"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000132",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "456cb4d1-c0cd-4412-ac90-be41f7aecced",
+            "value": "Claire Danes"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000149",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "523af10f-55de-4591-a7ef-449d7e0174a7",
+            "value": "Jodie Foster"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000160",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "836f8b77-112f-41d5-bc57-d922342067ae",
+            "value": "Ethan Hawke"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000166",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "3e31a794-acbd-471d-9942-d5aef527d8b9",
+            "value": "Helen Hunt"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000178",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "00c20d60-3a19-4ee6-8764-d57b907e2ae9",
+            "value": "Diane Lane"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000182",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "01e743c9-24e5-41bf-a878-aa4185897839",
+            "value": "Jennifer Lopez"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000191",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "88734743-5003-436e-b5ed-ad304e1ccd97",
+            "value": "Ewan McGregor"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000210",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "81601c6f-7eae-4c84-bed2-e36b593f9b89",
+            "value": "Julia Roberts"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000213",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "1e4990c0-cfc7-4ca7-b8b5-05280de9b6e2",
+            "value": "Winona Ryder"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000215",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "94445504-0aaa-4324-8098-1ce3c16bb10f",
+            "value": "Susan Sarandon"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000232",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "66ea49e5-fc06-4ca7-aab3-0851af311d86",
+            "value": "Sharon Stone"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000235",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "087292d2-1d08-4e37-a768-206776cfa785",
+            "value": "Uma Thurman"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000246",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "1a65f582-f42b-419d-8595-1425e9645ac1",
+            "value": "Bruce Willis"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000250",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "e34a68bb-096f-4910-a681-fd48f0c7f56f",
+            "value": "Ren\u00e9e Zellweger"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000260",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "fdd28f98-ad5d-41cc-8eb6-216e979f4745",
+            "value": "Joan Allen"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000300",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "0e7f8620-31e9-42a5-8e3c-913849a2515a",
+            "value": "Juliette Binoche"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000332",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "4b5f327d-b76b-42a8-a1c1-08b931373662",
+            "value": "Don Cheadle"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000349",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "d933c900-74b5-4748-b8aa-854be36b4e27",
+            "value": "Joan Cusack"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000357",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "3946e408-aed5-40c6-9707-e85b58bb2578",
+            "value": "Lolita Davidovich"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000368",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "d19a239a-7c11-4ed2-a6a1-6de13d1893bc",
+            "value": "Laura Dern"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000396",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "19501a3c-b654-49f8-ad37-08f40ba9a3d8",
+            "value": "Farrah Fawcett"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000412",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "593c09f5-2f11-4fbc-8719-9aec34c7573a",
+            "value": "Andy Garcia"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000432",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "5c3d3d8e-d9ca-4221-b316-16522e96f3bd",
+            "value": "Gene Hackman"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000481",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "9b5db390-4afc-4212-b69b-d8ddf719e2f8",
+            "value": "Alice Krige"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000499",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "33d5780d-e30c-4dae-a079-646ea033a1d0",
+            "value": "Bai Ling"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000542",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "33ff5709-470d-4c14-b9ca-5efda6506ccc",
+            "value": "Penelope Ann Miller"
+          }
+        ]
+      }
+    }
+  ]
+}
+--- result_above ---
+file written: tmp/query_knows_1520854222.json
+D3Util#__init__: tmp/query_knows_1520854222.json

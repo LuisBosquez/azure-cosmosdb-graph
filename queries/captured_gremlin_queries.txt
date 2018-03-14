@@ -1,0 +1,88 @@
+function: capture_gremlin_queries_for_doc
+
+countv
+query: g.V().count()
+
+diane_lane_edges
+query: g.V('nm0000178').bothE()
+
+diane_lane_in
+query: g.V('nm0000178').out('in')
+
+diane_lane_knows
+query: g.V('nm0000178').out('knows')
+
+julia_roberts_edges
+query: g.V('nm0000210').bothE()
+
+julia_roberts_in
+query: g.V('nm0000210').out('in')
+
+julia_roberts_knows
+query: g.V('nm0000210').out('knows')
+
+kevin_bacon_edges
+query: g.V('nm0000102').bothE()
+
+kevin_bacon_in
+query: g.V('nm0000102').out('in')
+
+kevin_bacon_knows
+query: g.V('nm0000102').out('knows')
+
+lori_singer_edges
+query: g.V('nm0001742').bothE()
+
+lori_singer_in
+query: g.V('nm0001742').out('in')
+
+lori_singer_knows
+query: g.V('nm0001742').out('knows')
+
+movie_cotton_club
+query: g.V().has('label','movie').has('id','tt0087089')
+
+movie_footloose
+query: g.V().has('label','movie').has('id','tt0087277')
+
+movie_pretty_woman
+query: g.V().has('label','movie').has('id','tt0100405')
+
+path_diane_lane_to_lori_singer
+query: g.V('nm0000178').repeat(out().simplePath()).until(hasId('nm0001742')).path().limit(3)
+
+path_lori_singer_to_charlotte_rampling
+query: g.V('nm0001742').repeat(out().simplePath()).until(hasId('nm0001648')).path().limit(3)
+
+path_lori_singer_to_viola_davis
+query: g.V('nm0001742').repeat(out().simplePath()).until(hasId('nm0205626')).path().limit(3)
+
+path_richard_gere_to_julia_roberts
+query: g.V('nm0000152').repeat(out().simplePath()).until(hasId('nm0000210')).path().limit(3)
+
+path_richard_gere_to_kevin_bacon
+query: g.V('nm0000152').repeat(out().simplePath()).until(hasId('nm0000102')).path().limit(3)
+
+path_richard_gere_to_lori_singer
+query: g.V('nm0000152').repeat(out().simplePath()).until(hasId('nm0001742')).path().limit(3)
+
+person_julia_roberts
+query: g.V().has('label','person').has('id','nm0000210')
+
+person_kevin_bacon
+query: g.V().has('label','person').has('id','nm0000102')
+
+person_nm0001742
+query: g.V().has('label','person').has('id','nm0001742')
+
+person_richard_gere
+query: g.V().has('label','person').has('id','nm0000152')
+
+richard_gere_edges
+query: g.V('nm0000152').bothE()
+
+richard_gere_in
+query: g.V('nm0000152').out('in')
+
+richard_gere_knows
+query: g.V('nm0000152').out('knows')

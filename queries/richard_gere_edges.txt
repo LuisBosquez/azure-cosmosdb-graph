@@ -1,0 +1,281 @@
+function: query
+create_client:
+endpoint: wss://cjoakim-cosmosdb-gremlin.gremlin.cosmosdb.azure.com:443/
+username: /dbs/dev/colls/movies
+qname: edges
+query: g.V('nm0000152').bothE()
+--- result_below ---
+{
+  "qname": "edges",
+  "query": "g.V('nm0000152').bothE()",
+  "result_count": 22,
+  "result": [
+    {
+      "id": "8ceb36af-9103-4c7d-85f7-965d0ce505e3",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0087089",
+      "outV": "nm0000152",
+      "properties": {
+        "title": "The Cotton Club"
+      }
+    },
+    {
+      "id": "bb8f5418-0d3b-4626-92cd-dfb3ae9e3682",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0089420",
+      "outV": "nm0000152",
+      "properties": {
+        "title": "King David"
+      }
+    },
+    {
+      "id": "23ccfcff-cad4-491d-911c-c86dce9a2d43",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0091637",
+      "outV": "nm0000152",
+      "properties": {
+        "title": "No Mercy"
+      }
+    },
+    {
+      "id": "fb9a6de7-a3d8-4167-b3c6-e29d15ee7a14",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0091786",
+      "outV": "nm0000152",
+      "properties": {
+        "title": "Power"
+      }
+    },
+    {
+      "id": "f4913c19-a8c8-4b61-8bc2-1c4513badf32",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0095640",
+      "outV": "nm0000152",
+      "properties": {
+        "title": "Miles from Home"
+      }
+    },
+    {
+      "id": "e061b3c2-998a-48d3-8ea4-aa7097d7af67",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0099850",
+      "outV": "nm0000152",
+      "properties": {
+        "title": "Internal Affairs"
+      }
+    },
+    {
+      "id": "38d20270-c6a5-444f-94bb-ec9992ba2ac2",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0100405",
+      "outV": "nm0000152",
+      "properties": {
+        "title": "Pretty Woman"
+      }
+    },
+    {
+      "id": "2f8feb7a-5d99-4a6f-8e05-b4cb2d366922",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0101991",
+      "outV": "nm0000152",
+      "properties": {
+        "title": "Rhapsody in August"
+      }
+    },
+    {
+      "id": "81d9c346-2607-4b67-ad35-29600b65337f",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0104265",
+      "outV": "nm0000152",
+      "properties": {
+        "title": "Final Analysis"
+      }
+    },
+    {
+      "id": "520638f2-f311-4350-9cde-ef988c3c3708",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0107611",
+      "outV": "nm0000152",
+      "properties": {
+        "title": "Mr. Jones"
+      }
+    },
+    {
+      "id": "5c2fafa9-782b-4be9-9042-f9a35f67e485",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0108185",
+      "outV": "nm0000152",
+      "properties": {
+        "title": "Sommersby"
+      }
+    },
+    {
+      "id": "4a33f3e0-909f-493d-afb5-3d13b6641a05",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0110146",
+      "outV": "nm0000152",
+      "properties": {
+        "title": "Intersection"
+      }
+    },
+    {
+      "id": "68179a0c-47e4-4b1c-bc05-1afd50b3f520",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0113071",
+      "outV": "nm0000152",
+      "properties": {
+        "title": "First Knight"
+      }
+    },
+    {
+      "id": "1a700adc-9e41-4001-ad21-d4919034c81e",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0117381",
+      "outV": "nm0000152",
+      "properties": {
+        "title": "Primal Fear"
+      }
+    },
+    {
+      "id": "91753bfc-af2f-4842-9d26-794f09e7a474",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0119395",
+      "outV": "nm0000152",
+      "properties": {
+        "title": "The Jackal"
+      }
+    },
+    {
+      "id": "6bc5a9f6-5fa4-487d-bb99-e91a282f16c8",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0119994",
+      "outV": "nm0000152",
+      "properties": {
+        "title": "Red Corner"
+      }
+    },
+    {
+      "id": "494eff5b-7413-4291-8161-b42059400c9e",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0163187",
+      "outV": "nm0000152",
+      "properties": {
+        "title": "Runaway Bride"
+      }
+    },
+    {
+      "id": "e1530791-505b-4171-bed5-b7dd3c294448",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0174480",
+      "outV": "nm0000152",
+      "properties": {
+        "title": "Autumn in New York"
+      }
+    },
+    {
+      "id": "dddac604-2c98-4fe7-8e91-1a4b00e926e3",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0205271",
+      "outV": "nm0000152",
+      "properties": {
+        "title": "Dr. T & the Women"
+      }
+    },
+    {
+      "id": "d846e8f8-6bc1-4daf-96f3-5b055a113ded",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0250797",
+      "outV": "nm0000152",
+      "properties": {
+        "title": "Unfaithful"
+      }
+    },
+    {
+      "id": "71233b8b-6c8e-41a4-a034-67dcb7bd91a1",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0265349",
+      "outV": "nm0000152",
+      "properties": {
+        "title": "The Mothman Prophecies"
+      }
+    },
+    {
+      "id": "894904a3-58c0-4a54-94e4-b507f58c1b9c",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0299658",
+      "outV": "nm0000152",
+      "properties": {
+        "title": "Chicago"
+      }
+    }
+  ]
+}
+--- result_above ---
+file written: tmp/query_edges_1520854191.json
+D3Util#__init__: tmp/query_edges_1520854191.json

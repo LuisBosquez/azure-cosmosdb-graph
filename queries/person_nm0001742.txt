@@ -1,0 +1,30 @@
+function: query
+create_client:
+endpoint: wss://cjoakim-cosmosdb-gremlin.gremlin.cosmosdb.azure.com:443/
+username: /dbs/dev/colls/movies
+qname: person
+query: g.V().has('label','person').has('id','nm0001742')
+--- result_below ---
+{
+  "qname": "person",
+  "query": "g.V().has('label','person').has('id','nm0001742')",
+  "result_count": 1,
+  "result": [
+    {
+      "id": "nm0001742",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "fb444d04-c856-4142-ae57-8cc94b5ba5e4",
+            "value": "Lori Singer"
+          }
+        ]
+      }
+    }
+  ]
+}
+--- result_above ---
+file written: tmp/query_person_1520854141.json
+D3Util#__init__: tmp/query_person_1520854141.json

@@ -1,0 +1,394 @@
+function: query
+create_client:
+endpoint: wss://cjoakim-cosmosdb-gremlin.gremlin.cosmosdb.azure.com:443/
+username: /dbs/dev/colls/movies
+qname: in
+query: g.V('nm0000152').out('in')
+--- result_below ---
+{
+  "qname": "in",
+  "query": "g.V('nm0000152').out('in')",
+  "result_count": 29,
+  "result": [
+    {
+      "id": "tt0087089",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "1fc388ca-bf5a-4d55-af58-60f33650fade",
+            "value": "The Cotton Club"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0089420",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "aba8a623-0e39-430e-abbf-76bfb8e91aba",
+            "value": "King David"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0091637",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "7b9d214b-662d-4f34-8e0a-d5b4aaaf93cb",
+            "value": "No Mercy"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0091786",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "46397e8c-8564-4ab3-a373-db53b0eb3fb2",
+            "value": "Power"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0095640",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "4f4c034b-1d44-4c0a-977b-76a7115a97a3",
+            "value": "Miles from Home"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0099850",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "74eb3aa1-7091-4494-abc2-2110b3339b14",
+            "value": "Internal Affairs"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0100405",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "12830d38-912a-4f6e-9f76-52bf094eedd7",
+            "value": "Pretty Woman"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0101991",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "d826dc48-03a0-449b-b3c8-bc751551d2d4",
+            "value": "Rhapsody in August"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0104265",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "c54033f9-f4f8-4076-85bf-dc22e67e952a",
+            "value": "Final Analysis"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0107611",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "59ee0dea-d167-4124-a9c2-91e0fe7836cc",
+            "value": "Mr. Jones"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0108185",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "ef3f01f2-615a-468d-a1dd-5d0d951a51e3",
+            "value": "Sommersby"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0110146",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "ee6fb460-9712-4256-9ce7-2e74fe0f16a0",
+            "value": "Intersection"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0113071",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "8483ca57-29af-4b1d-b177-2a95d7354a70",
+            "value": "First Knight"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0117381",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "564dda6c-2000-47ca-8ed0-832c347322d0",
+            "value": "Primal Fear"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0119395",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "86f81410-3acf-4484-a26c-3045e0fe568c",
+            "value": "The Jackal"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0119994",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "ec69f08d-bb3f-442d-a4dc-3e51536fa0e2",
+            "value": "Red Corner"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0163187",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "bab15165-4f93-4145-9365-ba730b21fc3f",
+            "value": "Runaway Bride"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0174480",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "78d6cb47-b9d4-44ce-8477-48aef4b7415a",
+            "value": "Autumn in New York"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0205271",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "2c3e463d-0bab-4460-894e-0fd9ea9106a4",
+            "value": "Dr. T & the Women"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0250797",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "233a07bb-8780-44bc-b55a-5a17ca0dbda9",
+            "value": "Unfaithful"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0265349",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "406d0e92-74d0-4050-a13d-e60c5ff7cfa8",
+            "value": "The Mothman Prophecies"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0299658",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "4723e1fc-7601-4978-8227-d407a6bbfb30",
+            "value": "Chicago"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0358135",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "0f4d2fc7-370f-41f2-80b2-04fbd36e6b6f",
+            "value": "Shall We Dance"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0387059",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "a115ae79-b7b5-4f55-b647-fd7d4b9f4d89",
+            "value": "Bee Season"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0455782",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "8265f4f7-535e-4562-b954-656c20b0c9d7",
+            "value": "The Hunting Party"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0462338",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "9cd31a80-5023-42e3-a46e-117acf48bd5b",
+            "value": "The Hoax"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0472267",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "a9bb9eb0-1bab-4ee3-a55b-740d7c16b8ea",
+            "value": "Ending Aids: The Search for a Vaccine"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0473356",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "87ef8007-3535-4f69-bcdf-4bb21450407e",
+            "value": "The Flock"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0956038",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "2f9ea548-4e75-421f-b49e-d55bb241e398",
+            "value": "Nights in Rodanthe"
+          }
+        ]
+      }
+    }
+  ]
+}
+--- result_above ---
+file written: tmp/query_in_1520854160.json
+D3Util#__init__: tmp/query_in_1520854160.json

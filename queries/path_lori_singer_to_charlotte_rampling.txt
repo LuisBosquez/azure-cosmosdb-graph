@@ -1,0 +1,232 @@
+function: query
+create_client:
+endpoint: wss://cjoakim-cosmosdb-gremlin.gremlin.cosmosdb.azure.com:443/
+username: /dbs/dev/colls/movies
+qname: path
+query: g.V('nm0001742').repeat(out().simplePath()).until(hasId('nm0001648')).path().limit(3)
+--- result_below ---
+{
+  "qname": "path",
+  "query": "g.V('nm0001742').repeat(out().simplePath()).until(hasId('nm0001648')).path().limit(3)",
+  "result_count": 3,
+  "result": [
+    {
+      "labels": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "objects": [
+        {
+          "id": "nm0001742",
+          "label": "person",
+          "type": "vertex",
+          "properties": {
+            "name": [
+              {
+                "id": "fb444d04-c856-4142-ae57-8cc94b5ba5e4",
+                "value": "Lori Singer"
+              }
+            ]
+          }
+        },
+        {
+          "id": "nm0000102",
+          "label": "person",
+          "type": "vertex",
+          "properties": {
+            "name": [
+              {
+                "id": "ba749aff-7a72-429e-8bf7-ff40c73e2e18",
+                "value": "Kevin Bacon"
+              }
+            ]
+          }
+        },
+        {
+          "id": "nm2225369",
+          "label": "person",
+          "type": "vertex",
+          "properties": {
+            "name": [
+              {
+                "id": "821267fa-2080-4c14-8caf-7883890cc074",
+                "value": "Jennifer Lawrence"
+              }
+            ]
+          }
+        },
+        {
+          "id": "nm0001648",
+          "label": "person",
+          "type": "vertex",
+          "properties": {
+            "name": [
+              {
+                "id": "41d7c9e0-400a-4b64-b212-9e64466822e7",
+                "value": "Charlotte Rampling"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "labels": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "objects": [
+        {
+          "id": "nm0001742",
+          "label": "person",
+          "type": "vertex",
+          "properties": {
+            "name": [
+              {
+                "id": "fb444d04-c856-4142-ae57-8cc94b5ba5e4",
+                "value": "Lori Singer"
+              }
+            ]
+          }
+        },
+        {
+          "id": "nm0000102",
+          "label": "person",
+          "type": "vertex",
+          "properties": {
+            "name": [
+              {
+                "id": "ba749aff-7a72-429e-8bf7-ff40c73e2e18",
+                "value": "Kevin Bacon"
+              }
+            ]
+          }
+        },
+        {
+          "id": "nm0000134",
+          "label": "person",
+          "type": "vertex",
+          "properties": {
+            "name": [
+              {
+                "id": "40ec0dfa-432e-4838-8fce-1350efb9d7d6",
+                "value": "Robert De Niro"
+              }
+            ]
+          }
+        },
+        {
+          "id": "nm2225369",
+          "label": "person",
+          "type": "vertex",
+          "properties": {
+            "name": [
+              {
+                "id": "821267fa-2080-4c14-8caf-7883890cc074",
+                "value": "Jennifer Lawrence"
+              }
+            ]
+          }
+        },
+        {
+          "id": "nm0001648",
+          "label": "person",
+          "type": "vertex",
+          "properties": {
+            "name": [
+              {
+                "id": "41d7c9e0-400a-4b64-b212-9e64466822e7",
+                "value": "Charlotte Rampling"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "labels": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "objects": [
+        {
+          "id": "nm0001742",
+          "label": "person",
+          "type": "vertex",
+          "properties": {
+            "name": [
+              {
+                "id": "fb444d04-c856-4142-ae57-8cc94b5ba5e4",
+                "value": "Lori Singer"
+              }
+            ]
+          }
+        },
+        {
+          "id": "nm0000102",
+          "label": "person",
+          "type": "vertex",
+          "properties": {
+            "name": [
+              {
+                "id": "ba749aff-7a72-429e-8bf7-ff40c73e2e18",
+                "value": "Kevin Bacon"
+              }
+            ]
+          }
+        },
+        {
+          "id": "nm0000223",
+          "label": "person",
+          "type": "vertex",
+          "properties": {
+            "name": [
+              {
+                "id": "f3c35495-6363-4134-99fe-017ccdae87a7",
+                "value": "Elisabeth Shue"
+              }
+            ]
+          }
+        },
+        {
+          "id": "nm2225369",
+          "label": "person",
+          "type": "vertex",
+          "properties": {
+            "name": [
+              {
+                "id": "821267fa-2080-4c14-8caf-7883890cc074",
+                "value": "Jennifer Lawrence"
+              }
+            ]
+          }
+        },
+        {
+          "id": "nm0001648",
+          "label": "person",
+          "type": "vertex",
+          "properties": {
+            "name": [
+              {
+                "id": "41d7c9e0-400a-4b64-b212-9e64466822e7",
+                "value": "Charlotte Rampling"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
+--- result_above ---
+file written: tmp/query_path_1520854278.json
+D3Util#__init__: tmp/query_path_1520854278.json
+file written: d3/graph.json

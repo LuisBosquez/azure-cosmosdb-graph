@@ -1,0 +1,18 @@
+function: query
+create_client:
+endpoint: wss://cjoakim-cosmosdb-gremlin.gremlin.cosmosdb.azure.com:443/
+username: /dbs/dev/colls/movies
+qname: countv
+query: g.V().count()
+--- result_below ---
+{
+  "qname": "countv",
+  "query": "g.V().count()",
+  "result_count": 1,
+  "result": [
+    853
+  ]
+}
+--- result_above ---
+file written: tmp/query_countv_1520854098.json
+D3Util#__init__: tmp/query_countv_1520854098.json

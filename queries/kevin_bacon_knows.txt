@@ -1,0 +1,394 @@
+function: query
+create_client:
+endpoint: wss://cjoakim-cosmosdb-gremlin.gremlin.cosmosdb.azure.com:443/
+username: /dbs/dev/colls/movies
+qname: knows
+query: g.V('nm0000102').out('knows')
+--- result_below ---
+{
+  "qname": "knows",
+  "query": "g.V('nm0000102').out('knows')",
+  "result_count": 29,
+  "result": [
+    {
+      "id": "nm0000093",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "867ab2c5-552f-4285-871a-6c184ff39422",
+            "value": "Brad Pitt"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000098",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "f510d10d-5bff-4b7d-b5e0-2a8c5eebaab3",
+            "value": "Jennifer Aniston"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000117",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "eabbb2fb-52af-4888-a7ff-e9dae988adde",
+            "value": "Neve Campbell"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000129",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "c11b5ad7-2dc0-402b-9f28-d0d1642a9a4e",
+            "value": "Tom Cruise"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000134",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "40ec0dfa-432e-4838-8fce-1350efb9d7d6",
+            "value": "Robert De Niro"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000147",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "729667ad-2aba-4ebf-a820-8c480bfefd92",
+            "value": "Colin Firth"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000158",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "09eaa3fb-3143-44ba-8d18-823589dcbd9b",
+            "value": "Tom Hanks"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000178",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "00c20d60-3a19-4ee6-8764-d57b907e2ae9",
+            "value": "Diane Lane"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000193",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "7fe452eb-4dee-4413-bb92-6d4c40bd8117",
+            "value": "Demi Moore"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000197",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "3c1fbf29-222a-4438-9187-972e780f33a5",
+            "value": "Jack Nicholson"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000198",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "a9c584e6-2c3f-40bd-8fce-c031525a554c",
+            "value": "Gary Oldman"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000200",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "afa2fa2a-3fe8-4851-8883-4c385c02b517",
+            "value": "Bill Paxton"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000209",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "9f799615-e035-4df6-916d-481c223eba42",
+            "value": "Tim Robbins"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000210",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "81601c6f-7eae-4c84-bed2-e36b593f9b89",
+            "value": "Julia Roberts"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000223",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "f3c35495-6363-4134-99fe-017ccdae87a7",
+            "value": "Elisabeth Shue"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000225",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "5c272a94-beaa-4afd-ae56-5a99e2299ab1",
+            "value": "Christian Slater"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000234",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "4caaf077-4f0d-4346-b7f9-32d79144211d",
+            "value": "Charlize Theron"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000239",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "d50af965-ab79-4fd6-befe-6bcced562137",
+            "value": "Liv Tyler"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000250",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "e34a68bb-096f-4910-a681-fd48f0c7f56f",
+            "value": "Ren\u00e9e Zellweger"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000276",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "2f7b932d-b5cf-47d8-b1af-c1d2b827158c",
+            "value": "Sean Astin"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000285",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "6e5ad7c9-e338-4ac5-83ba-8acbccb459c6",
+            "value": "Alec Baldwin"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000287",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "7d279e2f-e841-47c9-a5aa-55e86b0a9319",
+            "value": "William Baldwin"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000313",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "c2b0d065-6b38-4e17-9e4c-b09f95dc0754",
+            "value": "Jeff Bridges"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000369",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "732bb8d6-b077-4341-ba7f-3cfbd531ee25",
+            "value": "Matt Dillon"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000400",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "dcd177d1-a309-4f47-9e64-fc9444c498ec",
+            "value": "Linda Fiorentino"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000403",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "374159ac-c2f3-4b8f-a52d-9b0ab8a8fc72",
+            "value": "Bridget Fonda"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000409",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "97132b43-dd11-457f-8813-15ad18a7c693",
+            "value": "Brendan Fraser"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000412",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "593c09f5-2f11-4fbc-8719-9aec34c7573a",
+            "value": "Andy Garcia"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nm0000415",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "cd179fdf-03cc-4476-989c-4e2924430a33",
+            "value": "Jami Gertz"
+          }
+        ]
+      }
+    }
+  ]
+}
+--- result_above ---
+file written: tmp/query_knows_1520854210.json
+D3Util#__init__: tmp/query_knows_1520854210.json

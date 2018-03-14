@@ -1,0 +1,30 @@
+function: query
+create_client:
+endpoint: wss://cjoakim-cosmosdb-gremlin.gremlin.cosmosdb.azure.com:443/
+username: /dbs/dev/colls/movies
+qname: movie
+query: g.V().has('label','movie').has('id','tt0087089')
+--- result_below ---
+{
+  "qname": "movie",
+  "query": "g.V().has('label','movie').has('id','tt0087089')",
+  "result_count": 1,
+  "result": [
+    {
+      "id": "tt0087089",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "1fc388ca-bf5a-4d55-af58-60f33650fade",
+            "value": "The Cotton Club"
+          }
+        ]
+      }
+    }
+  ]
+}
+--- result_above ---
+file written: tmp/query_movie_1520854117.json
+D3Util#__init__: tmp/query_movie_1520854117.json

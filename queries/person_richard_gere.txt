@@ -1,0 +1,30 @@
+function: query
+create_client:
+endpoint: wss://cjoakim-cosmosdb-gremlin.gremlin.cosmosdb.azure.com:443/
+username: /dbs/dev/colls/movies
+qname: person
+query: g.V().has('label','person').has('id','nm0000152')
+--- result_below ---
+{
+  "qname": "person",
+  "query": "g.V().has('label','person').has('id','nm0000152')",
+  "result_count": 1,
+  "result": [
+    {
+      "id": "nm0000152",
+      "label": "person",
+      "type": "vertex",
+      "properties": {
+        "name": [
+          {
+            "id": "4fd27782-4206-4eda-a04b-4fadbd35a71e",
+            "value": "Richard Gere"
+          }
+        ]
+      }
+    }
+  ]
+}
+--- result_above ---
+file written: tmp/query_person_1520854129.json
+D3Util#__init__: tmp/query_person_1520854129.json

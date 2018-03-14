@@ -1,0 +1,281 @@
+function: query
+create_client:
+endpoint: wss://cjoakim-cosmosdb-gremlin.gremlin.cosmosdb.azure.com:443/
+username: /dbs/dev/colls/movies
+qname: edges
+query: g.V('nm0000102').bothE()
+--- result_below ---
+{
+  "qname": "edges",
+  "query": "g.V('nm0000102').bothE()",
+  "result_count": 22,
+  "result": [
+    {
+      "id": "37cb073f-4279-443e-85b4-39050c533fd7",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0087277",
+      "outV": "nm0000102",
+      "properties": {
+        "title": "Footloose"
+      }
+    },
+    {
+      "id": "4c7b1787-761c-4316-9667-62db954cb9a1",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0091814",
+      "outV": "nm0000102",
+      "properties": {
+        "title": "Quicksilver"
+      }
+    },
+    {
+      "id": "342690ae-47a8-4e3f-abb2-764ef21e234e",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0092967",
+      "outV": "nm0000102",
+      "properties": {
+        "title": "End of the Line"
+      }
+    },
+    {
+      "id": "60243380-68e4-48f7-a0a7-03c2dd728fc8",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0093403",
+      "outV": "nm0000102",
+      "properties": {
+        "title": "Lemon Sky"
+      }
+    },
+    {
+      "id": "da5606d9-bb1e-472a-96b5-ae7151578a28",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0094318",
+      "outV": "nm0000102",
+      "properties": {
+        "title": "White Water Summer"
+      }
+    },
+    {
+      "id": "9d6306fc-45ee-416b-8400-2173dc014de1",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0096094",
+      "outV": "nm0000102",
+      "properties": {
+        "title": "Shes Having a Baby"
+      }
+    },
+    {
+      "id": "6b06c93f-8e88-436f-84fa-5ac96b410970",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0096926",
+      "outV": "nm0000102",
+      "properties": {
+        "title": "The Big Picture"
+      }
+    },
+    {
+      "id": "dfeecce0-cd6c-4b54-8cbb-98e8c65d4840",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0097125",
+      "outV": "nm0000102",
+      "properties": {
+        "title": "Criminal Law"
+      }
+    },
+    {
+      "id": "36cbb925-758c-4622-ad7b-54d8dab8434a",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0099582",
+      "outV": "nm0000102",
+      "properties": {
+        "title": "Flatliners"
+      }
+    },
+    {
+      "id": "86985aa3-0e4e-4c18-b581-08dfb4a81a59",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0100814",
+      "outV": "nm0000102",
+      "properties": {
+        "title": "Tremors"
+      }
+    },
+    {
+      "id": "46ef0d77-0db9-4307-b045-3ede76831ee4",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0102011",
+      "outV": "nm0000102",
+      "properties": {
+        "title": "He Said, She Said"
+      }
+    },
+    {
+      "id": "61d5ed93-fc76-4a64-87ae-3470c95d0248",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0102733",
+      "outV": "nm0000102",
+      "properties": {
+        "title": "Pyrates"
+      }
+    },
+    {
+      "id": "88a82a4d-e7ad-4f03-834e-e73877f9b337",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0102741",
+      "outV": "nm0000102",
+      "properties": {
+        "title": "Queens Logic"
+      }
+    },
+    {
+      "id": "6dd123b5-ce7f-4efc-a30b-6f2efb43931d",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0104257",
+      "outV": "nm0000102",
+      "properties": {
+        "title": "A Few Good Men"
+      }
+    },
+    {
+      "id": "cfa2a709-2981-408c-b9f9-c9dd8c7db379",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0109067",
+      "outV": "nm0000102",
+      "properties": {
+        "title": "The Air Up There"
+      }
+    },
+    {
+      "id": "71a51f4b-8594-4d35-837a-1bf6c40b2d34",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0110997",
+      "outV": "nm0000102",
+      "properties": {
+        "title": "The River Wild"
+      }
+    },
+    {
+      "id": "567418a1-a7d6-49b7-8d3a-aee262b03967",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0112384",
+      "outV": "nm0000102",
+      "properties": {
+        "title": "Apollo 13"
+      }
+    },
+    {
+      "id": "1e2f62ab-41be-4438-a5ef-af35b79c1b39",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0112453",
+      "outV": "nm0000102",
+      "properties": {
+        "title": "Balto"
+      }
+    },
+    {
+      "id": "2068b6e9-fe5d-43f7-a814-b4d7fc2200c6",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0113870",
+      "outV": "nm0000102",
+      "properties": {
+        "title": "Murder in the First"
+      }
+    },
+    {
+      "id": "2789369a-3807-4a9d-95de-0c2d10706e42",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0117665",
+      "outV": "nm0000102",
+      "properties": {
+        "title": "Sleepers"
+      }
+    },
+    {
+      "id": "06a13844-7ced-43e7-8615-7105a9a2b029",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0118980",
+      "outV": "nm0000102",
+      "properties": {
+        "title": "Digging to China"
+      }
+    },
+    {
+      "id": "7fcd0b6d-2615-459a-9ec9-5b8ea610eacf",
+      "label": "in",
+      "type": "edge",
+      "inVLabel": "movie",
+      "outVLabel": "person",
+      "inV": "tt0119896",
+      "outV": "nm0000102",
+      "properties": {
+        "title": "Picture Perfect"
+      }
+    }
+  ]
+}
+--- result_above ---
+file written: tmp/query_edges_1520854179.json
+D3Util#__init__: tmp/query_edges_1520854179.json

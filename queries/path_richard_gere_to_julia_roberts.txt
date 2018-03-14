@@ -1,0 +1,148 @@
+function: query
+create_client:
+endpoint: wss://cjoakim-cosmosdb-gremlin.gremlin.cosmosdb.azure.com:443/
+username: /dbs/dev/colls/movies
+qname: path
+query: g.V('nm0000152').repeat(out().simplePath()).until(hasId('nm0000210')).path().limit(3)
+--- result_below ---
+{
+  "qname": "path",
+  "query": "g.V('nm0000152').repeat(out().simplePath()).until(hasId('nm0000210')).path().limit(3)",
+  "result_count": 3,
+  "result": [
+    {
+      "labels": [
+        [],
+        []
+      ],
+      "objects": [
+        {
+          "id": "nm0000152",
+          "label": "person",
+          "type": "vertex",
+          "properties": {
+            "name": [
+              {
+                "id": "4fd27782-4206-4eda-a04b-4fadbd35a71e",
+                "value": "Richard Gere"
+              }
+            ]
+          }
+        },
+        {
+          "id": "nm0000210",
+          "label": "person",
+          "type": "vertex",
+          "properties": {
+            "name": [
+              {
+                "id": "81601c6f-7eae-4c84-bed2-e36b593f9b89",
+                "value": "Julia Roberts"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "labels": [
+        [],
+        [],
+        []
+      ],
+      "objects": [
+        {
+          "id": "nm0000152",
+          "label": "person",
+          "type": "vertex",
+          "properties": {
+            "name": [
+              {
+                "id": "4fd27782-4206-4eda-a04b-4fadbd35a71e",
+                "value": "Richard Gere"
+              }
+            ]
+          }
+        },
+        {
+          "id": "nm0000114",
+          "label": "person",
+          "type": "vertex",
+          "properties": {
+            "name": [
+              {
+                "id": "667ecb35-e102-4ffd-84c2-05d0dc4c4b85",
+                "value": "Steve Buscemi"
+              }
+            ]
+          }
+        },
+        {
+          "id": "nm0000210",
+          "label": "person",
+          "type": "vertex",
+          "properties": {
+            "name": [
+              {
+                "id": "81601c6f-7eae-4c84-bed2-e36b593f9b89",
+                "value": "Julia Roberts"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "labels": [
+        [],
+        [],
+        []
+      ],
+      "objects": [
+        {
+          "id": "nm0000152",
+          "label": "person",
+          "type": "vertex",
+          "properties": {
+            "name": [
+              {
+                "id": "4fd27782-4206-4eda-a04b-4fadbd35a71e",
+                "value": "Richard Gere"
+              }
+            ]
+          }
+        },
+        {
+          "id": "nm0000215",
+          "label": "person",
+          "type": "vertex",
+          "properties": {
+            "name": [
+              {
+                "id": "94445504-0aaa-4324-8098-1ce3c16bb10f",
+                "value": "Susan Sarandon"
+              }
+            ]
+          }
+        },
+        {
+          "id": "nm0000210",
+          "label": "person",
+          "type": "vertex",
+          "properties": {
+            "name": [
+              {
+                "id": "81601c6f-7eae-4c84-bed2-e36b593f9b89",
+                "value": "Julia Roberts"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
+--- result_above ---
+file written: tmp/query_path_1520854241.json
+D3Util#__init__: tmp/query_path_1520854241.json
+file written: d3/graph.json

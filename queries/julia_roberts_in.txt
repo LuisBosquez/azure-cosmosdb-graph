@@ -1,0 +1,381 @@
+function: query
+create_client:
+endpoint: wss://cjoakim-cosmosdb-gremlin.gremlin.cosmosdb.azure.com:443/
+username: /dbs/dev/colls/movies
+qname: in
+query: g.V('nm0000210').out('in')
+--- result_below ---
+{
+  "qname": "in",
+  "query": "g.V('nm0000210').out('in')",
+  "result_count": 28,
+  "result": [
+    {
+      "id": "tt0095690",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "1b234fa6-9e98-4070-912a-3009d93c939d",
+            "value": "Mystic Pizza"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0098384",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "f6e1a38f-4ab1-4615-9784-ef469d4b4153",
+            "value": "Steel Magnolias"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0099582",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "e3f05b56-fb55-47b8-b9f3-830427155954",
+            "value": "Flatliners"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0100405",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "12830d38-912a-4f6e-9f76-52bf094eedd7",
+            "value": "Pretty Woman"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0101787",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "1d97ba4a-0c93-4513-ae92-d60c755cbf68",
+            "value": "Dying Young"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0102057",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "8354c947-2531-4c2e-ac58-5d2600ddb16c",
+            "value": "Hook"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0102945",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "1167711e-a3cb-43e0-9142-f0a964ee7cdc",
+            "value": "Sleeping with the Enemy"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0107798",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "81caef8c-b417-424d-beed-42a3471e5560",
+            "value": "The Pelican Brief"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0110093",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "1b91a3c6-ca9e-48be-be69-d8a82c4b739a",
+            "value": "I Love Trouble"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0110907",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "0485da27-1ff7-4d48-97e2-50ab9e4188ce",
+            "value": "Ready to Wear"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0114496",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "c31f39fa-40bc-4215-9a46-3f7b054be987",
+            "value": "Something to Talk About"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0116242",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "c8d012d0-d4d2-4079-8741-623ac3c35e26",
+            "value": "Everyone Says I Love You"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0117002",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "283e411d-2b03-4661-97bf-103a9ddaa6a8",
+            "value": "Mary Reilly"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0117039",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "9e53a1a2-2d2d-41be-b110-516f8f72fd9a",
+            "value": "Michael Collins"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0118883",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "87aa8ae2-0903-4ea8-ada1-f64bd2edd739",
+            "value": "Conspiracy Theory"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0119738",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "c1b60402-1c91-4a15-ad5f-6dcd14737248",
+            "value": "My Best Friends Wedding"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0120686",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "0c7df356-3109-409c-8ab3-ddd720c12104",
+            "value": "Stepmom"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0125439",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "617070dd-6638-4431-85f8-d71b2cdbbd1c",
+            "value": "Notting Hill"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0163187",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "bab15165-4f93-4145-9365-ba730b21fc3f",
+            "value": "Runaway Bride"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0195685",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "81d8e1e5-669a-486d-82a1-b09cef2681b1",
+            "value": "Erin Brockovich"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0236493",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "b33a8a32-734e-49ce-a31d-bb6f5182afe9",
+            "value": "The Mexican"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0240772",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "5c0abb47-521a-4424-8542-f865de6e77b5",
+            "value": "Oceans Eleven"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0265029",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "98187406-6d45-4fe9-b41a-2479f2d1d1af",
+            "value": "Americas Sweethearts"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0270288",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "a733d8eb-020a-4d6b-82d0-93f22faf420a",
+            "value": "Confessions of a Dangerous Mind"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0290212",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "76bd6dac-ba6f-43ad-96ca-de31cdb8504f",
+            "value": "Full Frontal"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0304415",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "1b1b766d-a294-46c5-b80b-850ec4a14f04",
+            "value": "Mona Lisa Smile"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0349903",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "6afa1565-413d-4a30-9ca0-428af700c644",
+            "value": "Oceans Twelve"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tt0376541",
+      "label": "movie",
+      "type": "vertex",
+      "properties": {
+        "title": [
+          {
+            "id": "5ee450b5-07fa-481c-a168-14a5ae9cd73d",
+            "value": "Closer"
+          }
+        ]
+      }
+    }
+  ]
+}
+--- result_above ---
+file written: tmp/query_in_1520854154.json
+D3Util#__init__: tmp/query_in_1520854154.json

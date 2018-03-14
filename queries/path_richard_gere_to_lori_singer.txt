@@ -1,0 +1,204 @@
+function: query
+create_client:
+endpoint: wss://cjoakim-cosmosdb-gremlin.gremlin.cosmosdb.azure.com:443/
+username: /dbs/dev/colls/movies
+qname: path
+query: g.V('nm0000152').repeat(out().simplePath()).until(hasId('nm0001742')).path().limit(3)
+--- result_below ---
+{
+  "qname": "path",
+  "query": "g.V('nm0000152').repeat(out().simplePath()).until(hasId('nm0001742')).path().limit(3)",
+  "result_count": 3,
+  "result": [
+    {
+      "labels": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "objects": [
+        {
+          "id": "nm0000152",
+          "label": "person",
+          "type": "vertex",
+          "properties": {
+            "name": [
+              {
+                "id": "4fd27782-4206-4eda-a04b-4fadbd35a71e",
+                "value": "Richard Gere"
+              }
+            ]
+          }
+        },
+        {
+          "id": "nm0000166",
+          "label": "person",
+          "type": "vertex",
+          "properties": {
+            "name": [
+              {
+                "id": "3e31a794-acbd-471d-9942-d5aef527d8b9",
+                "value": "Helen Hunt"
+              }
+            ]
+          }
+        },
+        {
+          "id": "nm0000158",
+          "label": "person",
+          "type": "vertex",
+          "properties": {
+            "name": [
+              {
+                "id": "09eaa3fb-3143-44ba-8d18-823589dcbd9b",
+                "value": "Tom Hanks"
+              }
+            ]
+          }
+        },
+        {
+          "id": "nm0001742",
+          "label": "person",
+          "type": "vertex",
+          "properties": {
+            "name": [
+              {
+                "id": "fb444d04-c856-4142-ae57-8cc94b5ba5e4",
+                "value": "Lori Singer"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "labels": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "objects": [
+        {
+          "id": "nm0000152",
+          "label": "person",
+          "type": "vertex",
+          "properties": {
+            "name": [
+              {
+                "id": "4fd27782-4206-4eda-a04b-4fadbd35a71e",
+                "value": "Richard Gere"
+              }
+            ]
+          }
+        },
+        {
+          "id": "nm0000178",
+          "label": "person",
+          "type": "vertex",
+          "properties": {
+            "name": [
+              {
+                "id": "00c20d60-3a19-4ee6-8764-d57b907e2ae9",
+                "value": "Diane Lane"
+              }
+            ]
+          }
+        },
+        {
+          "id": "nm0000102",
+          "label": "person",
+          "type": "vertex",
+          "properties": {
+            "name": [
+              {
+                "id": "ba749aff-7a72-429e-8bf7-ff40c73e2e18",
+                "value": "Kevin Bacon"
+              }
+            ]
+          }
+        },
+        {
+          "id": "nm0001742",
+          "label": "person",
+          "type": "vertex",
+          "properties": {
+            "name": [
+              {
+                "id": "fb444d04-c856-4142-ae57-8cc94b5ba5e4",
+                "value": "Lori Singer"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "labels": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "objects": [
+        {
+          "id": "nm0000152",
+          "label": "person",
+          "type": "vertex",
+          "properties": {
+            "name": [
+              {
+                "id": "4fd27782-4206-4eda-a04b-4fadbd35a71e",
+                "value": "Richard Gere"
+              }
+            ]
+          }
+        },
+        {
+          "id": "nm0000191",
+          "label": "person",
+          "type": "vertex",
+          "properties": {
+            "name": [
+              {
+                "id": "88734743-5003-436e-b5ed-ad304e1ccd97",
+                "value": "Ewan McGregor"
+              }
+            ]
+          }
+        },
+        {
+          "id": "nm0000158",
+          "label": "person",
+          "type": "vertex",
+          "properties": {
+            "name": [
+              {
+                "id": "09eaa3fb-3143-44ba-8d18-823589dcbd9b",
+                "value": "Tom Hanks"
+              }
+            ]
+          }
+        },
+        {
+          "id": "nm0001742",
+          "label": "person",
+          "type": "vertex",
+          "properties": {
+            "name": [
+              {
+                "id": "fb444d04-c856-4142-ae57-8cc94b5ba5e4",
+                "value": "Lori Singer"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
+--- result_above ---
+file written: tmp/query_path_1520854255.json
+D3Util#__init__: tmp/query_path_1520854255.json
+file written: d3/graph.json
