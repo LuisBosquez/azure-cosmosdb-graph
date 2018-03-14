@@ -37,14 +37,14 @@ with many distinct values (hundreds to thousands at a minimum).
 ## This Project
 
 This project contains **both** the data-wrangling logic as well as the end-result data
-that you can simply use.
+that you can simply load into **your** Azure CosmosDB with Graph API.
 
 At this time (3/14/2018) these instructions and scripts are oriented toward either of the
 following two environments:
 - "Standard" Python 3.6.4 from Python.org running on **macOS**.
 - Anaconda Python Python 3.5.2 on an **Azure Ubuntu Data Science Virtual Machine (DSVM)**.
 
-The several bash scripts in this project which use Python should auto-detect the operating
+The several bash scripts in this project which use Python auto-detect the operating
 system (Linux or macOS) and set the appropriate Python virtual environment.
 
 Docker containerized and/or Windows support may be added in the future.
@@ -53,9 +53,9 @@ Docker containerized and/or Windows support may be added in the future.
 
 This project uses both Python and Java as follows:
 
-- Python 3.x is used for **wrangling** the IMDb data into smaller files in the data/processed/ directory.
+- Python 3.x is used for **wrangling** the IMDb data into smaller files in the data/processed/ directory
 - Java 8 is used to **load** the Azure CosmosDB Graph database from file **data/processed/load_queries.txt**
-- Python 3.x is also used for command-line queries of the database, and for creating the visualizations.
+- Python 3.x is also used for command-line queries of the database, and for creating the visualizations
 
 ### macOS
 
@@ -106,6 +106,9 @@ IMDB_DATA_DIR=<some directory on your computer>
 The IMDB_DATA_DIR environment variable is used by the code to locate the necessary data files.
 It is recommended that you set it to the path to the **data/** subdirectory within this project.
 
+Script **bash_common** is sourced by several bash scripts to set additional environment
+variables such a the name of the database (i.e. - dev) and collection (i.e. - movies).
+
 ### Data Wrangling
 
 **To simply use the pre-wrangled data, skip down to the "Load the Database" section below.**
@@ -130,7 +133,8 @@ In short, the wrangling steps are:
 - Generate a list of Gremlin commands to insert the Vertices (movies, actors) and Edges into the DB
 
 See bash shell scripts **wrangle.sh** and **create_load_queries.sh** which implement this process.
-Note that the Gremlin command generation was intentionally decoupled from the actual DB loading process.
+Note that the Gremlin command generation for loading the database was intentionally decoupled from
+the actual DB loading process.
 
 Within $IMDB_DATA_DIR there should be raw/ and processed/ subdirectories.  The downloaded
 and unzipped IMDb data should be in the raw/ directory.
@@ -155,17 +159,30 @@ This is the list of the 10 actors as Python code:
 
 ### Load the Database
 
-File **data/processed/load_queries.txt** contains the pre-wrangled data that
-you can simply load into your DB.  It contains 7149 Gremlin commands to insert the
-set of **Vertices** (i.e. - movies and people) and the **Edges** connecting them.
+File **data/processed/load_queries.txt** contains the pre-wrangled data that you can simply load into your DB.
 
-To load this data into your dev/movies DB, execute the following bash script:
+It contains:
+- 7149 Gremlin commands total
+- 426 Movie Vertices
+- 858 Person Vertices
+- 1533 "in" Edges connecting the Person to the Movie Vertices
+- 4332 "knows" Edges connecting the Person Vertices
+
+You can compile the Java code and load the database with this script:
+```
+$ ./java_loader.sh
+```
+
+However, before executing java_loader.sh you need to create and edit file **src/remote.yaml**.
+See example file examples/remote.yaml - there are two values that you need to change to
+point to your database.
+
+Loading the database from this file takes approximately 10-minutes.
+
+Alternatively, to load this data into your DB with Python, execute the following bash script:
 ```
 $ ./execute_load_queries.sh
 ```
-
-This process will take approximately an 10-minutes, as there is a built in sleep time between
-inserts.  1284 Vertices should be inserted (426 movies, 858 people), with 5865 Edges.
 
 ### Query the Database
 
@@ -176,82 +193,49 @@ or with the Python client.
 count the vertices:
 g.V().count()
 
-diane_lane_edges:
-g.V('nm0000178').bothE()
+movie_footloose
+query: g.V(['t295','tt0087277'])
 
-diane_lane_in:
-g.V('nm0000178').out('in')
+movie_pretty_woman
+query: g.V(['t316','tt0100405'])
 
-diane_lane_knows:
-g.V('nm0000178').out('knows')
 
-julia_roberts_edges:
-g.V('nm0000210').bothE()
+person_julia_roberts
+query: g.V(['n14','nm0000210'])
 
-julia_roberts_in:
-g.V('nm0000210').out('in')
+person_kevin_bacon
+query: g.V(['n10','nm0000102'])
 
-julia_roberts_knows:
-g.V('nm0000210').out('knows')
+person_lori_singer
+query: g.V(['n10','nm0001742'])
 
-kevin_bacon_edges:
-g.V('nm0000102').bothE()
 
-kevin_bacon_in:
-g.V('nm0000102').out('in')
+kevin_bacon_in
+query: g.V(['n10','nm0000102']).out('in')
 
-kevin_bacon_knows:
-g.V('nm0000102').out('knows')
+lori_singer_in
+query: g.V(['n41','nm0001742']).out('in')
 
-lori_singer_edges:
-g.V('nm0001742').bothE()
 
-lori_singer_in:
-g.V('nm0001742').out('in')
+kevin_bacon_knows
+query: g.V(['n10','nm0000102']).out('knows')
 
-lori_singer_knows:
-g.V('nm0001742').out('knows')
+lori_singer_knows
+query: g.V(['n41','nm0001742']).out('knows')
 
-movie_footloose:
-g.V().has('label','movie').has('id','tt0087277')
 
-movie_pretty_woman:
-g.V().has('label','movie').has('id','tt0100405')
+kevin_bacon_edges
+query: g.V(['n10','nm0000102']).bothE()
 
-person_julia_roberts:
-g.V().has('label','person').has('id','nm0000210')
+lori_singer_edges
+query: g.V(['n41','nm0001742']).bothE()
 
-person_kevin_bacon:
-g.V().has('label','person').has('id','nm0000102')
 
-person_nm0001742:
-g.V().has('label','person').has('id','nm0001742')
+path_lori_singer_to_viola_davis
+query: g.V(['n41','nm0001742']).repeat(out().simplePath()).until(hasId('nm0205626')).path().limit(3)
 
-person_richard_gere:
-g.V().has('label','person').has('id','nm0000152')
-
-richard_gere_edges:
-g.V('nm0000152').bothE()
-
-richard_gere_in:
-g.V('nm0000152').out('in')
-
-richard_gere_knows:
-g.V('nm0000152').out('knows')
-
--- Path Queries
-
-path_richard_gere_to_julia_roberts:
-g.V('nm0000152').repeat(out().simplePath()).until(hasId('nm0000210')).path().limit(3)
-
-path_richard_gere_to_kevin_bacon:
-g.V('nm0000152').repeat(out().simplePath()).until(hasId('nm0000102')).path().limit(3)
-
-path_richard_gere_to_lori_singer:
-g.V('nm0000152').repeat(out().simplePath()).until(hasId('nm0001742')).path().limit(3)
-
-path_diane_lane_to_lori_singer:
-g.V('nm0000178').repeat(out().simplePath()).until(hasId('nm0001742')).path().limit(3)
+path_lori_singer_to_charlotte_rampling
+query: g.V(['n41','nm0001742']).repeat(out().simplePath()).until(hasId('nm0001648')).path().limit(3)
 ```
 
 See file queries.sh.  These previously executed queries have been captured to files in the
@@ -264,10 +248,13 @@ You can start a local python web server by running the command below:
 $ source bin/activate
 $ ./webserver.sh
 ```
+
+Visualizations are created for "knows" and "in" queries at this time.
+
 ### Example 1
 
 In another Terminal window, execute the following command to query CosmosDB for the "knows"
-path from Lori Singer (actress in Footloose) to Charlotte Rampling (actress in Red Sparrow).
+path (if any) from Lori Singer (actress in Footloose) to Charlotte Rampling (actress in Red Sparrow).
 ```
 $ python cosmos_graph.py query $dbname $collname path lori_singer charlotte_rampling
 ```
@@ -275,7 +262,7 @@ $ python cosmos_graph.py query $dbname $collname path lori_singer charlotte_ramp
 The above command creates and executes the following Gremlin query, after translating
 the person names to their IMDb identifiers.
 ```
-g.V('nm0001742').repeat(out().simplePath()).until(hasId('nm0001648')).path().limit(3)
+query: g.V(['n41','nm0001742']).repeat(out().simplePath()).until(hasId('nm0001648')).path().limit(3)
 ```
 
 The visit **http://localhost:8899/d3/index.html** with your web browser.  You should be able
@@ -306,7 +293,7 @@ Here are some useful links to Apache TinkerPop and Gremlin:
 - https://pypi.python.org/pypi/gremlinpython/3.2.7
 - https://docs.microsoft.com/en-us/azure/cosmos-db/create-graph-gremlin-console
 
-## Notes
+## Demo Notes
 
 ```
 IMDb Identifiers:
@@ -319,16 +306,27 @@ IMDb Identifiers:
 
 Gremlin Insert Statements:
 
-    g.addV('movie').property('id', 'tt0087277').property('title', 'Footloose')
+    g.addV('movie').property('pk','t295').property('id','tt0087277').property('title','Footloose')
 
-    g.addV('person').property('id', 'nm0000102').property('name', 'Kevin Bacon')
-    g.addV('person').property('id', 'nm0001742').property('name', 'Lori Singer')
+    g.addV('person').property('pk','n10').property('id','nm0000102').property('name','Kevin Bacon'))
+    g.addV('person').property('pk','n41').property('id','nm0001742').property('name','Lori Singer')
 
-    g.V('nm0000102').addE('in').to(g.V('tt0087277')).property('title', 'Footloose')
-    g.V('nm0001742').addE('in').to(g.V('tt0087277')).property('title', 'Footloose')
+    g.V(['n10','nm0000102']).addE('in').to(g.V(['t295','tt0087277'])).property('title','Footloose')
+    g.V(['n41','nm0001742']).addE('in').to(g.V(['t295','tt0087277'])).property('title','Footloose')
 
-    g.V('nm0000102').addE('knows').to(g.V('nm0001742')).property('mid_list', 'tt0087277')
-    g.V('nm0001742').addE('knows').to(g.V('nm0000102')).property('mid_list', 'tt0087277')
+    g.V(['n10','nm0000102']).addE('knows').to(g.V(['n41','nm0001742'])).property('mid_list','tt0087277')
+    g.V(['n41','nm0001742']).addE('knows').to(g.V(['n10','nm0000102'])).property('mid_list','tt0087277')
+
+Partition Keys:
+
+    When using graphs with partition keys, specify the key at the time of inserting the Vertex
+    into the database.  The following Python algorithm calculates this value; its purpose is
+    to generate many unique but reproducable values.  For example, the partition key value for
+    Kevin Bacon ('nm0000102') is 'n10', while Footloose is 't295'.
+
+    def id_to_pk(self, id):
+        # Return the square root of the digits of the given id, cast to an int, then a string.
+        return id[0] + str(int(math.sqrt(float(id[2:]))))
 
 Gremlin Queries and Python equivalents:
 
@@ -337,29 +335,18 @@ Gremlin Queries and Python equivalents:
         python cosmos_graph.py query $dbname $collname countv
 
     Search the movie Footloose:
-        g.V().has('label','movie').has('id','tt0087277')
+        g.V(['t295','tt0087277'])
         python cosmos_graph.py query $dbname $collname movie footloose
 
     Who does Kevin Bacon know?
-        g.V('nm0000102').out('knows')
+        query: g.V(['n10','nm0000102']).out('knows')
         python cosmos_graph.py query $dbname $collname knows kevin_bacon
 
     What are the "knows" paths from Lori Singer to Viola Davis?
-        g.V('nm0001742').repeat(out().simplePath()).until(hasId('nm0205626')).path().limit(3))
+        query: g.V(['n41','nm0001742']).repeat(out().simplePath()).until(hasId('nm0205626')).path().limit(3)
         python cosmos_graph.py query $dbname $collname path lori_singer viola_davis
 
     What are the "knows" paths from Lori Singer to Charlotte Rampling?
-        g.V('nm0001742').repeat(out().simplePath()).until(hasId('nm0001648')).path().limit(3)
+        query: g.V(['n41','nm0001742']).repeat(out().simplePath()).until(hasId('nm0001648')).path().limit(3)
         python cosmos_graph.py query $dbname $collname path lori_singer charlotte_rampling
 ```
-
-## Partitioning
-
-For example, for a graph with region ("USA") as the partition key and "Seattle" as the row key,
-you can find a vertex by using the following syntax:
-g.V(['USA', 'Seattle'])
-g.V([<partitionkey>, <rowkey>])
-g.E(['USA', 'I5'])
-
-https://docs.microsoft.com/en-us/azure/cosmos-db/partition-data
-"It's a best practice to have a partition key with many distinct values (hundreds to thousands at a minimum)."
