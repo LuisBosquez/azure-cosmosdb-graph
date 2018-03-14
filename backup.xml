@@ -2,13 +2,13 @@
 
     <description>
         Ant script to create a zip file backup of this project.
-        Chris Joakim, Microsoft, 2018/03/13
+        Chris Joakim, Microsoft, 2018/03/14
         ant -f backup.xml
     </description>
 
     <!-- These are the only properties you should have to change.  -->
     <property name="_projectRoot"   value="/Users/${user.name}/github" />
-    <property name="_projectName"   value="azure-cosmosdb-graph-py" />
+    <property name="_projectName"   value="azure-cosmosdb-graph" />
     <property name="_backupRoot"    value="/Backups/projects" />
 
     <!-- These properties are computed from the above. -->

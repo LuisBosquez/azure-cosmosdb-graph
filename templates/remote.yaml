@@ -1,0 +1,9 @@
+# Template for the src/remote.yaml file for the Java Gremlin client.
+# Chris Joakim, Microsoft, 2018/03/14
+hosts: [{{acccount}}.gremlin.cosmosdb.azure.com]
+port: 443
+username: /dbs/dev/colls/movies
+password: {{password}}
+connectionPool: {
+  enableSsl: true}
+serializer: { className: org.apache.tinkerpop.gremlin.driver.ser.GraphSONMessageSerializerV1d0, config: { serializeResultToString: true }}
