@@ -5,10 +5,12 @@ username: /dbs/dev/colls/movies
 qname: knows
 query: g.V(['n14','nm0000210']).out('knows')
 --- result_below ---
-<gremlin_python.driver.resultset.ResultSet object at 0x102687978>
 {
   "qname": "knows",
   "query": "g.V(['n14','nm0000210']).out('knows')",
+  "id1": "nm0000210",
+  "pk1": "n14",
+  "result_count": 22,
   "result": [
     {
       "id": "nm0000047",
@@ -431,5 +433,5 @@ query: g.V(['n14','nm0000210']).out('knows')
   ]
 }
 --- result_above ---
-file written: tmp/query_knows_1521022691.json
-D3Util#__init__: tmp/query_knows_1521022691.json
+file written: tmp/query_knows_1521024705.json
+D3Util#__init__: tmp/query_knows_1521024705.json

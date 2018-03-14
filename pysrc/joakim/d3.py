@@ -25,6 +25,12 @@ class D3Util:
         self.graph_obj['qname'] = self.results_obj['qname']
         self.graph_obj['query'] = self.results_obj['query']
 
+        if '_edges_' in self.infile:
+            self.parse_edges()
+
+        if '_knows_' in self.infile:
+            self.parse_knows()
+
         if '_path_' in self.infile:
             self.parse_path()
 
@@ -33,6 +39,12 @@ class D3Util:
             with open(self.outfile, 'wt') as f:
                 f.write(jstr)
                 print('file written: {}'.format(self.outfile))
+
+    def parse_edges(self):
+        pass
+
+    def parse_knows(self):
+        pass
 
     def parse_path(self):
         paths = self.results_obj['result']

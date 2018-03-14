@@ -5,10 +5,12 @@ username: /dbs/dev/colls/movies
 qname: edges
 query: g.V(['n41','nm0001742']).bothE()
 --- result_below ---
-<gremlin_python.driver.resultset.ResultSet object at 0x10560a978>
 {
   "qname": "edges",
   "query": "g.V(['n41','nm0001742']).bothE()",
+  "id1": "nm0001742",
+  "pk1": "n41",
+  "result_count": 14,
   "result": [
     {
       "id": "b3ee63a1-7d1b-4c4c-a7e2-924eb49ab919",
@@ -181,5 +183,5 @@ query: g.V(['n41','nm0001742']).bothE()
   ]
 }
 --- result_above ---
-file written: tmp/query_edges_1521022681.json
-D3Util#__init__: tmp/query_edges_1521022681.json
+file written: tmp/query_edges_1521024693.json
+D3Util#__init__: tmp/query_edges_1521024693.json

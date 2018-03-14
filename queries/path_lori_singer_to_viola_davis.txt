@@ -5,10 +5,12 @@ username: /dbs/dev/colls/movies
 qname: path
 query: g.V(['n41','nm0001742']).repeat(out().simplePath()).until(hasId('nm0205626')).path().limit(3)
 --- result_below ---
-<gremlin_python.driver.resultset.ResultSet object at 0x102ce2978>
 {
   "qname": "path",
   "query": "g.V(['n41','nm0001742']).repeat(out().simplePath()).until(hasId('nm0205626')).path().limit(3)",
+  "id1": "nm0001742",
+  "pk1": "n41",
+  "result_count": 3,
   "result": [
     {
       "labels": [
@@ -271,6 +273,6 @@ query: g.V(['n41','nm0001742']).repeat(out().simplePath()).until(hasId('nm020562
   ]
 }
 --- result_above ---
-file written: tmp/query_path_1521022948.json
-D3Util#__init__: tmp/query_path_1521022948.json
+file written: tmp/query_path_1521024732.json
+D3Util#__init__: tmp/query_path_1521024732.json
 file written: d3/graph.json

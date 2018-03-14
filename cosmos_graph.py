@@ -246,14 +246,12 @@ class Main:
 
     def query(self, db, coll):
         self.create_client(db, coll)
-        qname = sys.argv[4].lower()
-        query = None
+        qname, query, id1, pk1 = sys.argv[4].lower(), None, None, None
 
         if qname == 'movie':
             arg = sys.argv[5].lower()
             id1 = self.favorites.translate_to_id(arg)
             pk1 = self.id_to_pk(id1)
-            #query = "g.V().has('label','movie').has('id','{}')".format(id)
             query = "g.V(['{}','{}'])".format(pk1, id1)
 
         elif qname == 'person':
@@ -302,11 +300,12 @@ class Main:
             if result is not None:
                 print('--- result_below ---')
                 data = dict()
-                print(result)
                 r = result.one()
                 data['qname'] = qname
                 data['query'] = query
-                #data['result_count'] = len(r)
+                data['id1']   = id1
+                data['pk1']   = pk1
+                data['result_count'] = len(r)
                 data['result'] = r
                 jstr = json.dumps(data, sort_keys=False, indent=2)
                 print(jstr)
@@ -324,7 +323,7 @@ class Main:
             print('invalid args')
 
     def d3_gen(self):
-        infile  = sys.argv[4]
+        infile = sys.argv[4]
         print('d3_gen; infile: {}'.format(infile))
         util = d3.D3Util(infile)
 

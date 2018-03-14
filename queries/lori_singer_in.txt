@@ -5,10 +5,12 @@ username: /dbs/dev/colls/movies
 qname: in
 query: g.V(['n41','nm0001742']).out('in')
 --- result_below ---
-<gremlin_python.driver.resultset.ResultSet object at 0x10e485908>
 {
   "qname": "in",
   "query": "g.V(['n41','nm0001742']).out('in')",
+  "id1": "nm0001742",
+  "pk1": "n41",
+  "result_count": 2,
   "result": [
     {
       "id": "tt0087277",
@@ -51,5 +53,5 @@ query: g.V(['n41','nm0001742']).out('in')
   ]
 }
 --- result_above ---
-file written: tmp/query_in_1521022664.json
-D3Util#__init__: tmp/query_in_1521022664.json
+file written: tmp/query_in_1521024677.json
+D3Util#__init__: tmp/query_in_1521024677.json

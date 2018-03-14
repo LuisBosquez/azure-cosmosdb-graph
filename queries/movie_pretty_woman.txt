@@ -5,10 +5,12 @@ username: /dbs/dev/colls/movies
 qname: movie
 query: g.V(['t316','tt0100405'])
 --- result_below ---
-<gremlin_python.driver.resultset.ResultSet object at 0x102bf9978>
 {
   "qname": "movie",
   "query": "g.V(['t316','tt0100405'])",
+  "id1": "tt0100405",
+  "pk1": "t316",
+  "result_count": 1,
   "result": [
     {
       "id": "tt0100405",
@@ -32,5 +34,5 @@ query: g.V(['t316','tt0100405'])
   ]
 }
 --- result_above ---
-file written: tmp/query_movie_1521022632.json
-D3Util#__init__: tmp/query_movie_1521022632.json
+file written: tmp/query_movie_1521024636.json
+D3Util#__init__: tmp/query_movie_1521024636.json
