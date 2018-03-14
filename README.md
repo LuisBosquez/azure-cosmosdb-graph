@@ -298,7 +298,7 @@ Can you guess who nm0000206 is based on what movies they are "in" ?
 ```
 $ python cosmos_graph.py query $dbname $collname in nm0000206
 ```
-![image 1](img/img/nm0000206-in.png "")
+![image 1](img/nm0000206-in.png "")
 
 
 ## Gremlin-Python and Apache TinkerPop
