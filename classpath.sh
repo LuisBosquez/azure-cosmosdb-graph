@@ -14,7 +14,6 @@ then
 else
     source activate graph  # activate the conda virtualenv named graph
     python --version
-exit
 fi
 
 rm classpath.txt
