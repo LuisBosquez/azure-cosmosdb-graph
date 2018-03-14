@@ -2,6 +2,8 @@
 # IntelliJ and Java:
 .idea/
 *.iml
+classpath
+classpath.txt
 out/
 target/
 
