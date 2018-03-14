@@ -20,4 +20,8 @@ else
     python --version
 fi
 
+echo 'Starting simple web server...'
+echo 'Visit this URL with your web browser: http://localhost:8899/d3/index.html'
+echo ''
+
 python -m http.server $D3_WEBSERVER_PORT

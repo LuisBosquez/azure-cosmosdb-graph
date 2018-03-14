@@ -320,28 +320,6 @@ class Main:
                 if True:
                     # Also produce the d3/graph.json file for visualization
                     util = d3.D3Util(outfile)
-
-            # callback = self.gremlin_client.submitAsync(query)
-            # if callback.result() is not None:
-            #     print('--- result_below ---')
-            #     data = dict()
-            #     r = callback.result().one()
-            #     data['qname'] = qname
-            #     data['query'] = query
-            #     data['result_count'] = len(r)
-            #     data['result'] = r
-            #     jstr = json.dumps(data, sort_keys=False, indent=2)
-            #     print(jstr)
-
-            #     outfile = 'tmp/query_{}_{}.json'.format(qname, arrow.utcnow().timestamp)
-            #     with open(outfile, "w") as out:
-            #         out.write(jstr)
-            #         print('--- result_above ---')
-            #         print('file written: {}'.format(outfile))
-
-            #     if True:
-            #         # Also produce the d3/graph.json file for visualization
-            #         util = d3.D3Util(outfile)
         else:
             print('invalid args')
 
