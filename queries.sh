@@ -6,10 +6,9 @@
 # Run with:
 #   ./queries.sh
 #
-# Chris Joakim, Microsoft, 2018/03/12
+# Chris Joakim, Microsoft, 2018/03/14
 
-export dbname=dev
-export collname=movies
+source bash_common
 
 echo 'using database:   '$dbname
 echo 'using collection: '$collname

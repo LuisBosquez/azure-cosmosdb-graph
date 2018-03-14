@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Set and export common environment variables for the other bash scripts.
+# Chris Joakim, Microsoft, 2018/03/14
+
+# Azure CosmosDB names
+export dbname=dev
+export collname=movies
+
+# Name of operating system - Linux or Darwin
+OSTYPE=$(uname)
+export OSTYPE
+
+# IMDb identifiers
+export footloose=tt0087277
+export pretty_woman=tt0100405
+export kevin_bacon=nm0000102
+export lori_singer=nm0001742
+export julia_roberts=nm0000210
+export richard_gere=nm0000152

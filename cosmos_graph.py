@@ -26,7 +26,7 @@ Options:
   --version     Show version.
 """
 
-# Chris Joakim, Microsoft, 2018/03/13
+# Chris Joakim, Microsoft, 2018/03/14
 
 import csv, json, math, os, sys, time, traceback
 import arrow
@@ -44,7 +44,7 @@ from pysrc.joakim import config
 from pysrc.joakim import d3
 from pysrc.joakim import values
 
-VERSION='2018/03/11'
+VERSION='2018/03/14'
 FOOTLOOSE='tt0087277'
 PRETTYWOMAN='tt0100405'
 KEVINBACON='nm0000102'
@@ -58,7 +58,7 @@ class Main:
         self.c = config.Config()
         self.favorites = values.Favorites()
         self.queries = list()
-        self.default_sleep_time = 0.5
+        self.default_sleep_time = 0.25
         self.submit_query = False
         self.load_queries = list()
         self.load_idx = 0
@@ -103,7 +103,7 @@ class Main:
         print('username: {}'.format(username))
         #print('password: {}'.format(password))
         self.gremlin_client = client.Client(endpoint, 'g', username=username, password=password)
-        time.sleep(5)
+        time.sleep(3)
 
     def create_load_queries(self, db, coll):
         print('create_load_queries START')
@@ -210,6 +210,7 @@ class Main:
     def execute_load_queries(self, db, coll):
         infile  = self.c.load_queries_txt_filename()
         self.load_queries = list()
+        self.create_client(db, coll)
 
         with open(infile, 'rt') as f:
             for idx, line in enumerate(f):
@@ -219,18 +220,13 @@ class Main:
         print('{} load_queries loaded from file {}'.format(count, infile))
 
         for idx, query in enumerate(self.load_queries):
-            self.load_sync(idx, query, db, coll)
+            self.load_sync(idx, query)
             time.sleep(self.default_sleep_time)
 
         print('execute_load_queries completed')
 
-    def load_sync(self, idx, query, db, coll):
-        # see https://github.com/apache/tinkerpop/blob/master/gremlin-python/src/main/jython/gremlin_python/driver/driver_remote_connection.py
+    def load_sync(self, idx, query):
         if query:
-            if idx % 40 == 0:
-                # limitation of gremlin_python.driver Client?
-                self.create_client(db, coll)
-
             epoch = time.time()
             print('load_sync idx: {} epoch: {} query: {}'.format(idx, epoch, query))
             result = self.gremlin_client.submit(query)
@@ -242,7 +238,6 @@ class Main:
                 return
 
     def load_loop_async(self, idx):
-        # see https://github.com/apache/tinkerpop/blob/master/gremlin-python/src/main/jython/gremlin_python/driver/driver_remote_connection.py
         if idx < len(self.load_queries):
             query = self.load_queries[idx]
             epoch1, epoch2 = None, None
