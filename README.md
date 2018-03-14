@@ -1,9 +1,9 @@
-# azure-cosmosdb-graph-py
+# azure-cosmosdb-graph
 
-CosmosDB Graph Database example - the N-Degrees of Kevin Bacon (or Julia Roberts or Richard Gere or Diane Lane or Lori Singer ...)
+CosmosDB Graph Database example - the N-Degrees of Kevin Bacon (or Lori Singer or Julia Roberts or Richard Gere or ...)
 
-Start with the IMDb datasets, wrangle them to a smaller size, load them into
-the CosmosDB/GraphDB, and search for the n-degrees of Kevin Bacon and others.
+Start with the IMDb datasets, wrangle them to a smaller practical size, load them into a CosmosDB/GraphDB, and search
+for the n-degrees of Kevin Bacon and others.
 
 ## The Six Degrees of Kevin Bacon
 
@@ -14,7 +14,8 @@ This CosmosDB/GraphDB example was inspired by [this](https://en.wikipedia.org/wi
 > "Kevin Bacon is the Center of the Universe" appeared.  Four Albright College students: Craig Fass, Christian Gardner,
 > Brian Turtle, and Mike Ginelli created the game early in 1994."
 
-It rests on the assumption that anyone involved in the Hollywood film industry can be linked through their film roles to Bacon within six steps.
+It rests on the assumption that anyone involved in the Hollywood film industry can be linked through their film roles
+to Bacon within six steps.
 
 ![image 1](img/kevin_bacon_and_lori_singer.jpg "")
 
@@ -28,29 +29,41 @@ It is recommended that you specify 10,000 RUs.
 
 ![image 1](img/create_graph.png "")
 
+For best performance is strongly recommended that you configure your graphs with a **partition key** per
+[this article](https://docs.microsoft.com/en-us/azure/cosmos-db/partition-data).  Choose a generic name
+like "pk" or "pkey", but populated it with many unique values.  It's a best practice to have a partition key
+with many distinct values (hundreds to thousands at a minimum).
 
 ## This Project
 
 This project contains **both** the data-wrangling logic as well as the end-result data
 that you can simply use.
 
-At this time (3/12/2018) these instructions and scripts are oriented toward either of the
+At this time (3/14/2018) these instructions and scripts are oriented toward either of the
 following two environments:
 - "Standard" Python 3.6.4 from Python.org running on **macOS**.
 - Anaconda Python Python 3.5.2 on an **Azure Ubuntu Data Science Virtual Machine (DSVM)**.
 
-There are two versions of the bash shell scripts; one for macOS and one for the DSVM.
-The DSVM scripts end with "_dsvm.sh".
+The several bash scripts in this project which use Python should auto-detect the operating
+system (Linux or macOS) and set the appropriate Python virtual environment.
 
-Docker containerized and/or Windows versions may be added in the future.
+Docker containerized and/or Windows support may be added in the future.
+
+### Programming Languages
+
+This project uses both Python and Java as follows:
+
+- Python 3.x is used for **wrangling** the IMDb data into smaller files in the data/processed/ directory.
+- Java 8 is used to **load** the Azure CosmosDB Graph database from file **data/processed/load_queries.txt**
+- Python 3.x is also used for command-line queries of the database, and for creating the visualizations.
 
 ### macOS
 
-On a macOS, to clone the project and setup your Python virtual environment, run the following in Terminal.
-It is assumed that Python 3.5 or higher is installed.
+On macOS, to clone the project and setup your Python virtual environment, run the following in Terminal.
+It is assumed that git, Python 3.5 or higher, Java 8, and Maven are installed.
 ```
-$ git clone git@github.com:cjoakim/azure-cosmosdb-graph-py.git
-$ cd azure-cosmosdb-graph-py
+$ git clone git@github.com:cjoakim/azure-cosmosdb-graph.git
+$ cd azure-cosmosdb-graph
 $ mkdir tmp/
 $ ./venv.sh
 $ source bin/activate
@@ -60,10 +73,11 @@ Python 3.6.4
 
 ### DSVM
 
-Setup instructions for an Azure Ubuntu Data Science Virtual Machine are very similar.
+The setup instructions for an Azure Ubuntu Data Science Virtual Machine are very similar.
+The DSVM includes git, Anaconda Python 3.5, Java 8, and Maven.
 ```
-$ git clone git@github.com:cjoakim/azure-cosmosdb-graph-py.git
-$ cd azure-cosmosdb-graph-py
+$ git clone git@github.com:cjoakim/azure-cosmosdb-graph.git
+$ cd azure-cosmosdb-graph
 $ mkdir tmp/
 $ ./conda_env_dsvm.sh
 $ source activate gremlin
@@ -74,26 +88,6 @@ Python 3.5.2 :: Anaconda custom (64-bit)
 You can optionally enable port 8899 on the DSVM for use by the lightwight Python web server
 to serve D3.js visualizations.  In Azure Portal, select your DSVM, click 'Networking' then
 add an inbound port rule.  See section "Visualizations with D3.js" below.
-
-Note: these DSVM instructions are in the proces of being updated at this time.
-
-```
-$ java -version
-openjdk version "1.8.0_151"
-OpenJDK Runtime Environment (build 1.8.0_151-8u151-b12-0ubuntu0.16.04.2-b12)
-OpenJDK 64-Bit Server VM (build 25.151-b12, mixed mode)
-
-$ mvn -version
-Apache Maven 3.3.9
-Maven home: /usr/share/maven
-Java version: 1.8.0_151, vendor: Oracle Corporation
-Java home: /usr/lib/jvm/java-8-openjdk-amd64/jre
-Default locale: en_US, platform encoding: UTF-8
-OS name: "linux", version: "4.13.0-1011-azure", arch: "amd64", family: "unix"
-
-$ ant -version
-Apache Ant(TM) version 1.9.6 compiled on July 8 2015
-```
 
 ### Environment Variables
 
@@ -109,14 +103,12 @@ AZURE_COSMOSDB_GRAPH1_URI=https://cjoakim-cosmos-graph1.documents.azure.com:443/
 IMDB_DATA_DIR=<some directory on your computer>
 ```
 
-The IMDB_DATA_DIR environment variable is used by the code to locate the necessary
-data files.  It is recommended that you set it to the path to the **data/**
-subdirectory within this project.
-
-To use the pre-wrangled data skip the following **Data Wrangling** section and down to the
-**Load the Database** section on this page.
+The IMDB_DATA_DIR environment variable is used by the code to locate the necessary data files.
+It is recommended that you set it to the path to the **data/** subdirectory within this project.
 
 ### Data Wrangling
+
+**To simply use the pre-wrangled data, skip down to the "Load the Database" section below.**
 
 The source data for this project is the **Internet Movie Database (IMDb)**.  It contains millions of rows
 of data related to Hollywood moves, their actors/participants, and their ratings.
@@ -130,15 +122,15 @@ is easily loaded into CosmosDB for your exploration.  The wrangling logic is imp
 
 In short, the wrangling steps are:
 - Start with a manually created list of just 10 favorite actors (see 'actors_for_candidate_movies' below)
-- Extract just the movies for those actors (approx 426 movies)
+- Extract just the movies for those actors
 - Filter the movies by minimum rating
 - Extract the principals (i.e. - actors) for those filtered movies.  Omit directors, producers, stunt men, etc.
 - Extract the details for each of the principals
-- Derive the person-knows-person Edges based on the set of actors for each movie.
+- Derive the person-knows-person Edges based on the set of actors for each movie
 - Generate a list of Gremlin commands to insert the Vertices (movies, actors) and Edges into the DB
-- Note, the Gremlin command generation was intentionally decoupled from the actual DB loading.
 
 See bash shell scripts **wrangle.sh** and **create_load_queries.sh** which implement this process.
+Note that the Gremlin command generation was intentionally decoupled from the actual DB loading process.
 
 Within $IMDB_DATA_DIR there should be raw/ and processed/ subdirectories.  The downloaded
 and unzipped IMDb data should be in the raw/ directory.
