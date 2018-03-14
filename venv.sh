@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Recreate the virtual environment and reinstall libs.
-# Chris Joakim, 2018/03/12
+# Chris Joakim, 2018/03/14
 
 # brew upgrade python3
 
@@ -24,6 +24,7 @@ pip install --upgrade pip-tools
 # pip install --upgrade docopt
 # pip install --upgrade gremlinpython
 # pip install --upgrade futures
+# pip install --upgrade Jinja2
 
 # gremlinpython==3.2.7
 

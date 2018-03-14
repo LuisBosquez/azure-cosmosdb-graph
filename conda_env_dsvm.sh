@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Bash shell script to create the 'gremlin' conda/python virtual environment in an Azure DSVM.
-# Chris Joakim, Microsoft, 2018/03/12
+# Chris Joakim, Microsoft, 2018/03/14
 
-venvname='gremlin'
+venvname='graph'
 
 echo 'removing conda environment (if present): '$venvname
 conda remove --name $venvname --all -y
@@ -28,6 +28,7 @@ pip install azure
 pip install docopt
 pip install gremlinpython==3.2.7
 pip install futures
+pip install Jinja2
 
 echo 'listing the python packages in this conda environment:'
 conda list
