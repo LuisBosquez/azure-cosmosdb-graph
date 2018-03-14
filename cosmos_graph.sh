@@ -16,7 +16,6 @@ then
 else
     source activate graph  # activate the conda virtualenv named graph
     python --version
-exit
 fi
 
 if [ $drop_graph -gt 0 ]

@@ -15,7 +15,6 @@ then
     echo "we're on a Mac"
 else
     echo "we're on a DSVM"
-exit
 fi
 
 echo 'done'

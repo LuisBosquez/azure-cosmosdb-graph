@@ -18,7 +18,6 @@ then
 else
     source activate graph  # activate the conda virtualenv named graph
     python --version
-exit
 fi
 
 python -m http.server $D3_WEBSERVER_PORT

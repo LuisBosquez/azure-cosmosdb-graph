@@ -12,7 +12,6 @@ then
 else
     source activate graph  # activate the conda virtualenv named graph
     python --version
-exit
 fi
 
 python cosmos_graph.py execute_load_queries $dbname $collname > tmp/execute_load_queries.txt
