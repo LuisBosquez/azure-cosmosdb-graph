@@ -4,17 +4,14 @@ import org.apache.tinkerpop.gremlin.driver.Client;
 import org.apache.tinkerpop.gremlin.driver.Cluster;
 import org.apache.tinkerpop.gremlin.driver.Result;
 import org.apache.tinkerpop.gremlin.driver.ResultSet;
-import org.cjoakim.io.FileUtil;
-
-import java.io.File;
-import java.util.List;
-import java.util.concurrent.CompletableFuture;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.List;
 import java.util.Vector;
+import java.util.concurrent.CompletableFuture;
 
 /**
  * Java command-line program to load and query the Azure CosmosDB with Gremlin API.
@@ -42,8 +39,7 @@ public class GremlinClient {
     private static long     loadSleepIncrement = 20;  // add to loadSleepMs upon reconnects
     private static int      loadFailureCount   = 0;
     private static int      reconnectMax       = 10;
-
-
+    private static long     querySleepMs       = 1000;
 
     public static void main(String[] args) throws Exception {
 
@@ -109,26 +105,22 @@ public class GremlinClient {
 
     private static void query() throws Exception {
 
-        connect();
-
-        String[] queries = new String[3];
-        queries[0] = "g.V().count()";
-        queries[1] = "g.V(['n10','nm0000102'])";
-        queries[2] = "g.V(['n41','nm0001742']).repeat(out().simplePath()).until(hasId('nm0001648')).path().limit(3)";
-
+        String[] queries = new String[2];
+        queries[0] = "g.V(['n10','nm0000102'])";
+        queries[1] = "g.V(['n41','nm0001742']).repeat(out().simplePath()).until(hasId('nm0001648')).path().limit(3)";
 
         for (String query : queries) {
             System.out.println("query: " + query);
+            connect();
             ResultSet results = client.submit(query);
 
             CompletableFuture<List<Result>> completableFutureResults = results.all();
             List<Result> resultList = completableFutureResults.get();
 
             for (Result result : resultList) {
-                System.out.println("result:");
-                System.out.println(result.toString());
+                System.out.println("result: " + result.toString());
             }
-            pause(loadSleepMs);
+            pause(querySleepMs);
         }
     }
 
@@ -217,7 +209,6 @@ public class GremlinClient {
         String dataDir = System.getenv("IMDB_DATA_DIR");
         String infile = dataDir + File.separator + "processed/load_queries.txt";
         System.out.println("reading file: " + infile);
-        FileUtil util = new FileUtil();
         return readFileAsLines(infile);
     }
 
