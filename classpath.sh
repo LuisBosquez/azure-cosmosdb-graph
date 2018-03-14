@@ -17,7 +17,13 @@ else
 exit
 fi
 
+rm classpath.txt
+rm classpath
+
+echo 'executing maven to determine the classpath ...'
 mvn dependency:build-classpath -Dmdep.outputFile=classpath.txt
 
-echo 'executing classpath.py to generate classpath file'
+echo 'executing classpath.py to generate classpath file ...'
 python3 classpath.py classpath > classpath
+
+ls -al | grep classpath
