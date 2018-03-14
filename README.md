@@ -165,8 +165,8 @@ It contains:
 - 7149 Gremlin commands total
 - 426 Movie Vertices
 - 858 Person Vertices
-- 1533 "in" Edges connecting the Person to the Movie Vertices
-- 4332 "knows" Edges connecting the Person Vertices
+- 1533 "in" Edges connecting eich Person to their Movie Vertices
+- 4332 "knows" Edges connecting the Person Vertices per their common Movies
 
 You can compile the Java code and load the database with this script:
 ```
@@ -273,7 +273,7 @@ Lori Singer to Charlotte Rampling is shown below.
 
 ### Example 2
 
-Can you guess who nm0000206 is based on what movies they are "in" ?
+Quiz: Can you guess who nm0000206 is based on what movies he/she is "in" ?
 ```
 $ python cosmos_graph.py query $dbname $collname in nm0000206
 ```
