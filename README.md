@@ -17,6 +17,9 @@ This CosmosDB/GraphDB example was inspired by [this](https://en.wikipedia.org/wi
 It rests on the assumption that anyone involved in the Hollywood film industry can be linked through their film roles
 to Bacon within six steps.
 
+The [Small-World Phenomenon](http://www.mathaware.org/mam/04/essays/smallworld.html) describes this 
+six-degrees of separation in mathematics.
+
 ![image 1](img/kevin_bacon_and_lori_singer.jpg "")
 
 ## CosmosDB Provisioning
