@@ -20,7 +20,7 @@ import java.util.concurrent.CompletableFuture;
  * See https://docs.microsoft.com/en-us/azure/cosmos-db/partition-data
  *
  * @author Chris Joakim, Microsoft
- * @version 2018/03/14
+ * @version 2018/04/22
  */
 public class GremlinClient {
 
@@ -92,7 +92,7 @@ public class GremlinClient {
             System.out.println("connect() reconnectMax count reached!");
         }
 
-        String connString = System.getenv("AZURE_COSMOSDB_GRAPH1_CONN_STRING");
+        String connString = System.getenv("AZURE_COSMOSDB_GRAPHDB_CONN_STRING");
         System.out.println(connString);
 
         cluster = Cluster.build(new File("src/remote.yaml")).create();

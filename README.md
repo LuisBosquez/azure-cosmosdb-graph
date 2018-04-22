@@ -17,7 +17,7 @@ This CosmosDB/GraphDB example was inspired by [this](https://en.wikipedia.org/wi
 It rests on the assumption that anyone involved in the Hollywood film industry can be linked through their film roles
 to Bacon within six steps.
 
-The [Small-World Phenomenon](http://www.mathaware.org/mam/04/essays/smallworld.html) describes this 
+The [Small-World Phenomenon](http://www.mathaware.org/mam/04/essays/smallworld.html) describes this
 six-degrees of separation in mathematics.
 
 ![image 1](img/kevin_bacon_and_lori_singer.jpg "")
@@ -97,11 +97,11 @@ add an inbound port rule.  See section "Visualizations with D3.js" below.
 In either environment, you'll need to set the following environment variables to similar values:
 
 ```
-AZURE_COSMOSDB_GRAPH1_ACCT=cjoakim-cosmos-graph1
-AZURE_COSMOSDB_GRAPH1_CONN_STRING=AccountEndpoint=https://cjoakim-cosmos-graph1.documents.azure.com:443/;AccountKey=h2D...Sw==;
-AZURE_COSMOSDB_GRAPH1_DBNAME=dev
-AZURE_COSMOSDB_GRAPH1_KEY=h2D...Sw==
-AZURE_COSMOSDB_GRAPH1_URI=https://cjoakim-cosmos-graph1.documents.azure.com:443/
+AZURE_COSMOSDB_GRAPHDB_ACCT=cjoakim-cosmos-graph1
+AZURE_COSMOSDB_GRAPHDB_CONN_STRING=AccountEndpoint=https://cjoakim-cosmos-graph1.documents.azure.com:443/;AccountKey=h2D...Sw==;
+AZURE_COSMOSDB_GRAPHDB_DBNAME=dev
+AZURE_COSMOSDB_GRAPHDB_KEY=h2D...Sw==
+AZURE_COSMOSDB_GRAPHDB_URI=https://cjoakim-cosmos-graph1.documents.azure.com:443/
 
 IMDB_DATA_DIR=<some directory on your computer>
 ```

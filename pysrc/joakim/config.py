@@ -1,7 +1,7 @@
 import json
 import os
 
-# Chris Joakim, Microsoft, 2018/03/14
+# Chris Joakim, Microsoft, 2018/04/22
 
 
 class Config:
@@ -18,10 +18,10 @@ class Config:
         return 'config.json'
 
     def cosmosdb_acct(self):
-        return os.environ['AZURE_COSMOSDB_GRAPH1_ACCT']
+        return os.environ['AZURE_COSMOSDB_GRAPHDB_ACCT']
 
     def cosmosdb_uri(self):
-        return os.environ['AZURE_COSMOSDB_GRAPH1_URI']
+        return os.environ['AZURE_COSMOSDB_GRAPHDB_URI']
 
     def cosmosdb_gremlin_url(self):
         # example: wss://cjoakim-cosmos-graph1.gremlin.cosmosdb.azure.com:443/
@@ -33,7 +33,7 @@ class Config:
         return "/dbs/{}/colls/{}".format(dbname, collname)
 
     def cosmosdb_key(self):
-        return os.environ['AZURE_COSMOSDB_GRAPH1_KEY']
+        return os.environ['AZURE_COSMOSDB_GRAPHDB_KEY']
 
     def data_dir(self):
         return os.environ['IMDB_DATA_DIR']

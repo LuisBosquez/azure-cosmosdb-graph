@@ -1,255 +1,81 @@
 {
   "nodes": [
     {
-      "id": "nm0000206",
-      "name": "nm0000206",
-      "label": "person"
+      "id": "nm0001742",
+      "name": "Lori Singer",
+      "label": "person:nm0001742"
     },
     {
-      "id": "tt0091065",
-      "name": "Flying",
-      "label": "tt0091065"
+      "id": "nm0000102",
+      "name": "Kevin Bacon",
+      "label": "person:nm0000102"
     },
     {
-      "id": "tt0091860",
-      "name": "Rivers Edge",
-      "label": "tt0091860"
+      "id": "nm0000178",
+      "name": "Diane Lane",
+      "label": "person:nm0000178"
     },
     {
-      "id": "tt0095730",
-      "name": "The Night Before",
-      "label": "tt0095730"
+      "id": "nm0005260",
+      "name": "Frankie Muniz",
+      "label": "person:nm0005260"
     },
     {
-      "id": "tt0095853",
-      "name": "Permanent Record",
-      "label": "tt0095853"
-    },
-    {
-      "id": "tt0095903",
-      "name": "The Prince of Pennsylvania",
-      "label": "tt0095903"
-    },
-    {
-      "id": "tt0096928",
-      "name": "Bill & Teds Excellent Adventure",
-      "label": "tt0096928"
-    },
-    {
-      "id": "tt0100822",
-      "name": "Tune in Tomorrow...",
-      "label": "tt0100822"
-    },
-    {
-      "id": "tt0101452",
-      "name": "Bill & Teds Bogus Journey",
-      "label": "tt0101452"
-    },
-    {
-      "id": "tt0102494",
-      "name": "My Own Private Idaho",
-      "label": "tt0102494"
-    },
-    {
-      "id": "tt0102685",
-      "name": "Point Break",
-      "label": "tt0102685"
-    },
-    {
-      "id": "tt0103874",
-      "name": "Bram Stokers Dracula",
-      "label": "tt0103874"
-    },
-    {
-      "id": "tt0107426",
-      "name": "Little Buddha",
-      "label": "tt0107426"
-    },
-    {
-      "id": "tt0107616",
-      "name": "Much Ado About Nothing",
-      "label": "tt0107616"
-    },
-    {
-      "id": "tt0111257",
-      "name": "Speed",
-      "label": "tt0111257"
-    },
-    {
-      "id": "tt0113481",
-      "name": "Johnny Mnemonic",
-      "label": "tt0113481"
-    },
-    {
-      "id": "tt0114887",
-      "name": "A Walk in the Clouds",
-      "label": "tt0114887"
-    },
-    {
-      "id": "tt0115857",
-      "name": "Chain Reaction",
-      "label": "tt0115857"
-    },
-    {
-      "id": "tt0116289",
-      "name": "Feeling Minnesota",
-      "label": "tt0116289"
-    },
-    {
-      "id": "tt0118971",
-      "name": "The Devils Advocate",
-      "label": "tt0118971"
-    },
-    {
-      "id": "tt0119502",
-      "name": "The Last Time I Committed Suicide",
-      "label": "tt0119502"
-    },
-    {
-      "id": "tt0133093",
-      "name": "The Matrix",
-      "label": "tt0133093"
-    },
-    {
-      "id": "tt0180734",
-      "name": "Hardball",
-      "label": "tt0180734"
+      "id": "nm0005561",
+      "name": "Luke Wilson",
+      "label": "person:nm0005561"
     }
   ],
   "links": [
     {
-      "source": "nm0000206",
-      "target": "tt0091065",
-      "type": "in",
+      "source": "nm0001742",
+      "target": "nm0000102",
+      "type": "knows (p1)",
       "since": ""
     },
     {
-      "source": "nm0000206",
-      "target": "tt0091860",
-      "type": "in",
+      "source": "nm0000102",
+      "target": "nm0000178",
+      "type": "knows (p1)",
       "since": ""
     },
     {
-      "source": "nm0000206",
-      "target": "tt0095730",
-      "type": "in",
+      "source": "nm0001742",
+      "target": "nm0000102",
+      "type": "knows (p2)",
       "since": ""
     },
     {
-      "source": "nm0000206",
-      "target": "tt0095853",
-      "type": "in",
+      "source": "nm0000102",
+      "target": "nm0005260",
+      "type": "knows (p2)",
       "since": ""
     },
     {
-      "source": "nm0000206",
-      "target": "tt0095903",
-      "type": "in",
+      "source": "nm0005260",
+      "target": "nm0000178",
+      "type": "knows (p2)",
       "since": ""
     },
     {
-      "source": "nm0000206",
-      "target": "tt0096928",
-      "type": "in",
+      "source": "nm0001742",
+      "target": "nm0000102",
+      "type": "knows (p3)",
       "since": ""
     },
     {
-      "source": "nm0000206",
-      "target": "tt0100822",
-      "type": "in",
+      "source": "nm0000102",
+      "target": "nm0005561",
+      "type": "knows (p3)",
       "since": ""
     },
     {
-      "source": "nm0000206",
-      "target": "tt0101452",
-      "type": "in",
-      "since": ""
-    },
-    {
-      "source": "nm0000206",
-      "target": "tt0102494",
-      "type": "in",
-      "since": ""
-    },
-    {
-      "source": "nm0000206",
-      "target": "tt0102685",
-      "type": "in",
-      "since": ""
-    },
-    {
-      "source": "nm0000206",
-      "target": "tt0103874",
-      "type": "in",
-      "since": ""
-    },
-    {
-      "source": "nm0000206",
-      "target": "tt0107426",
-      "type": "in",
-      "since": ""
-    },
-    {
-      "source": "nm0000206",
-      "target": "tt0107616",
-      "type": "in",
-      "since": ""
-    },
-    {
-      "source": "nm0000206",
-      "target": "tt0111257",
-      "type": "in",
-      "since": ""
-    },
-    {
-      "source": "nm0000206",
-      "target": "tt0113481",
-      "type": "in",
-      "since": ""
-    },
-    {
-      "source": "nm0000206",
-      "target": "tt0114887",
-      "type": "in",
-      "since": ""
-    },
-    {
-      "source": "nm0000206",
-      "target": "tt0115857",
-      "type": "in",
-      "since": ""
-    },
-    {
-      "source": "nm0000206",
-      "target": "tt0116289",
-      "type": "in",
-      "since": ""
-    },
-    {
-      "source": "nm0000206",
-      "target": "tt0118971",
-      "type": "in",
-      "since": ""
-    },
-    {
-      "source": "nm0000206",
-      "target": "tt0119502",
-      "type": "in",
-      "since": ""
-    },
-    {
-      "source": "nm0000206",
-      "target": "tt0133093",
-      "type": "in",
-      "since": ""
-    },
-    {
-      "source": "nm0000206",
-      "target": "tt0180734",
-      "type": "in",
+      "source": "nm0005561",
+      "target": "nm0000178",
+      "type": "knows (p3)",
       "since": ""
     }
   ],
-  "qname": "in",
-  "query": "g.V(['n14','nm0000206']).out('in')"
+  "qname": "path",
+  "query": "g.V(['n41','nm0001742']).repeat(out().simplePath()).until(hasId('nm0000178')).path().limit(3)"
 }
