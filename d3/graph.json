@@ -11,19 +11,24 @@
       "label": "person:nm0000102"
     },
     {
-      "id": "nm0000178",
-      "name": "Diane Lane",
-      "label": "person:nm0000178"
+      "id": "nm2225369",
+      "name": "Jennifer Lawrence",
+      "label": "person:nm2225369"
     },
     {
-      "id": "nm0005260",
-      "name": "Frankie Muniz",
-      "label": "person:nm0005260"
+      "id": "nm0001648",
+      "name": "Charlotte Rampling",
+      "label": "person:nm0001648"
     },
     {
-      "id": "nm0005561",
-      "name": "Luke Wilson",
-      "label": "person:nm0005561"
+      "id": "nm0000134",
+      "name": "Robert De Niro",
+      "label": "person:nm0000134"
+    },
+    {
+      "id": "nm0000223",
+      "name": "Elisabeth Shue",
+      "label": "person:nm0000223"
     }
   ],
   "links": [
@@ -35,7 +40,13 @@
     },
     {
       "source": "nm0000102",
-      "target": "nm0000178",
+      "target": "nm2225369",
+      "type": "knows (p1)",
+      "since": ""
+    },
+    {
+      "source": "nm2225369",
+      "target": "nm0001648",
       "type": "knows (p1)",
       "since": ""
     },
@@ -47,13 +58,19 @@
     },
     {
       "source": "nm0000102",
-      "target": "nm0005260",
+      "target": "nm0000134",
       "type": "knows (p2)",
       "since": ""
     },
     {
-      "source": "nm0005260",
-      "target": "nm0000178",
+      "source": "nm0000134",
+      "target": "nm2225369",
+      "type": "knows (p2)",
+      "since": ""
+    },
+    {
+      "source": "nm2225369",
+      "target": "nm0001648",
       "type": "knows (p2)",
       "since": ""
     },
@@ -65,17 +82,23 @@
     },
     {
       "source": "nm0000102",
-      "target": "nm0005561",
+      "target": "nm0000223",
       "type": "knows (p3)",
       "since": ""
     },
     {
-      "source": "nm0005561",
-      "target": "nm0000178",
+      "source": "nm0000223",
+      "target": "nm2225369",
+      "type": "knows (p3)",
+      "since": ""
+    },
+    {
+      "source": "nm2225369",
+      "target": "nm0001648",
       "type": "knows (p3)",
       "since": ""
     }
   ],
   "qname": "path",
-  "query": "g.V(['n41','nm0001742']).repeat(out().simplePath()).until(hasId('nm0000178')).path().limit(3)"
+  "query": "g.V(['n41','nm0001742']).repeat(out().simplePath()).until(hasId('nm0001648')).path().limit(3)"
 }
